@@ -39,9 +39,9 @@ export default function Home() {
           </h1>
           <p className="text-lg text-[var(--gray-mid)] leading-relaxed mb-10">
             Server LM conecta a cada persona con sus propios datos, o los datos de su empresa
-            con los documentos que necesita — y solo con esos. Un contador habla con sus facturas.
-            Un abogado con sus contratos. Un gerente con sus reportes. Cada uno ve lo suyo,
-            sin filtros manuales ni configuraciones complejas.
+            con los documentos que necesita — y solo con esos. Como chatear con NotebookLM pero
+            con todos tus documentos. Un contador habla con sus facturas. Un abogado con sus contratos.
+            Un gerente con sus reportes. Cada uno ve lo suyo, sin filtros manuales ni configuraciones complejas.
           </p>
           <a
             href="#registro"
