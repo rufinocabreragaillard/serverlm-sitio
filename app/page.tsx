@@ -6,13 +6,13 @@ export default function Home() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[var(--gray-light)]">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
           <Image
             src="/logo_Server_LM.png"
             alt="Server LM"
-            width={120}
-            height={40}
-            className="h-8 w-auto"
+            width={240}
+            height={80}
+            className="h-16 w-auto"
           />
           <div className="flex items-center gap-6 text-sm text-[var(--gray-mid)]">
             <a href="#que-hace" className="hover:text-[var(--foreground)] transition-colors">Producto</a>
