@@ -10,9 +10,9 @@ export default function Home() {
           <Image
             src="/logo_Server_LM.png"
             alt="Server LM"
-            width={240}
-            height={80}
-            className="h-16 w-auto"
+            width={480}
+            height={160}
+            className="h-32 w-auto"
           />
           <div className="flex items-center gap-6 text-sm text-[var(--gray-mid)]">
             <a href="#que-hace" className="hover:text-[var(--foreground)] transition-colors">Producto</a>
@@ -230,7 +230,7 @@ export default function Home() {
               Crear cuenta gratis
             </button>
             <p className="text-xs text-center text-[var(--gray-mid)]">
-              Al registrarte aceptas nuestros términos de uso. Se solicitará método de pago al activar tu plan.
+              Al registrarte aceptas nuestros términos de uso. Se solicitará método de pago al activar tu plan y no se cobrará durante el periodo de prueba. Solamente se cobrará (y se avisará) si entras al sistema después del vencimiento del período de prueba. Puedes cancelar la suscripción en cualquier momento.
             </p>
           </form>
         </div>
