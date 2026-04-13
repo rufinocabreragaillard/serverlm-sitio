@@ -230,7 +230,7 @@ export default function Home() {
               Crear cuenta gratis
             </button>
             <p className="text-xs text-center text-[var(--gray-mid)]">
-              Al registrarte aceptas nuestros términos de uso. Se solicitará método de pago al activar tu plan y no se cobrará durante el periodo de prueba. Solamente se cobrará (y se avisará) si entras al sistema después del vencimiento del período de prueba. Puedes cancelar la suscripción en cualquier momento.
+              Al registrarte aceptas nuestros términos de uso. Se solicitará método de pago al activar tu plan y no se cobrará durante el periodo de prueba. Solamente se cobrará (y se avisará) si entras al sistema después del vencimiento del período de prueba.
             </p>
           </form>
         </div>
