@@ -84,9 +84,12 @@ export default function Home() {
           <p className="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
             Quiénes somos
           </p>
-          <h2 className="text-3xl font-bold text-[var(--gray-dark)] mb-6">
-            Innovación & Experiencia
+          <h2 className="text-3xl font-bold text-[var(--gray-dark)] mb-2">
+            Server LM
           </h2>
+          <h3 className="text-2xl font-semibold text-[var(--gray-dark)] mb-6">
+            Innovación &nbsp;&amp;&nbsp; Experiencia
+          </h3>
           <p className="text-lg text-[var(--gray-mid)] leading-relaxed">
             Tenemos más de 40 años de experiencia transformando nuestro valor y
             navegando exitosamente las olas tecnológicas.
