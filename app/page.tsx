@@ -117,6 +117,7 @@ export default function Home() {
                 docs: "5.000 documentos",
                 features: ["Conversación con tus documentos", "Focos en lenguaje natural"],
                 cta: "Probar gratis",
+                ctaHref: "#registro",
                 highlight: false,
               },
               {
@@ -125,7 +126,8 @@ export default function Home() {
                 tokens: "120M tokens / mes",
                 docs: "50.000 documentos",
                 features: ["Todo en Personal", "Control por área"],
-                cta: "Probar gratis",
+                cta: "Contactar",
+                ctaHref: "mailto:rufinocabreragaillard@gmail.com",
                 highlight: false,
               },
               {
@@ -141,6 +143,7 @@ export default function Home() {
                   "Elección de LLMs",
                 ],
                 cta: "Contactar",
+                ctaHref: "mailto:rufinocabreragaillard@gmail.com",
                 highlight: true,
               },
               {
@@ -154,6 +157,7 @@ export default function Home() {
                   "Storage propio",
                 ],
                 cta: "Contactar",
+                ctaHref: "mailto:rufinocabreragaillard@gmail.com",
                 highlight: false,
               },
             ].map((plan) => (
@@ -183,7 +187,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <a
-                  href="#registro"
+                  href={plan.ctaHref}
                   className={`text-center py-2 rounded-md text-sm font-medium transition-opacity ${
                     plan.highlight
                       ? "bg-[var(--accent)] text-white hover:opacity-90"
