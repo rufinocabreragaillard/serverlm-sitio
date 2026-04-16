@@ -227,12 +227,12 @@ export default function Home() {
               placeholder="Contraseña"
               className="w-full px-4 py-3 border border-[var(--gray-light)] rounded-md text-sm focus:outline-none focus:border-[var(--accent)]"
             />
-            <button
-              type="submit"
-              className="w-full bg-[var(--accent)] text-white py-3 rounded-md text-sm font-medium hover:opacity-90 transition-opacity"
+            <a
+              href="mailto:rufinocabreragaillard@gmail.com"
+              className="w-full bg-[var(--accent)] text-white py-3 rounded-md text-sm font-medium hover:opacity-90 transition-opacity text-center block"
             >
               Crear cuenta gratis
-            </button>
+            </a>
             <p className="text-xs text-center text-[var(--gray-mid)]">
               Al registrarte aceptas nuestros términos de uso. Se solicitará método de pago al activar tu plan y no se cobrará durante el periodo de prueba. Solamente se cobrará (y se avisará) si entras al sistema después del vencimiento del período de prueba.
             </p>
