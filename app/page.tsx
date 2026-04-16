@@ -19,7 +19,7 @@ export default function Home() {
             <a href="#quienes-somos" className="hover:text-[var(--foreground)] transition-colors">Nosotros</a>
             <a href="#pricing" className="hover:text-[var(--foreground)] transition-colors">Planes</a>
             <a
-              href="#registro"
+              href="mailto:rufinocabreragaillard@gmail.com"
               className="bg-[var(--accent)] text-white text-sm px-4 py-2 rounded-md hover:opacity-90 transition-opacity"
             >
               Probar gratis
