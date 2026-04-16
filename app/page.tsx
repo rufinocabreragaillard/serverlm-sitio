@@ -19,7 +19,7 @@ export default function Home() {
             <a href="#quienes-somos" className="hover:text-[var(--foreground)] transition-colors">Nosotros</a>
             <a href="#pricing" className="hover:text-[var(--foreground)] transition-colors">Planes</a>
             <a
-              href="mailto:rufinocabreragaillard@gmail.com"
+              href="https://app.serverlm.ai"
               className="bg-[var(--accent)] text-white text-sm px-4 py-2 rounded-md hover:opacity-90 transition-opacity"
             >
               Probar gratis
