@@ -85,7 +85,7 @@ export default function Home() {
             Quiénes somos
           </p>
           <h2 className="text-3xl font-bold text-[var(--gray-dark)] mb-6">
-            Agencia AAS
+            Innovación & Experiencia
           </h2>
           <p className="text-lg text-[var(--gray-mid)] leading-relaxed">
             Tenemos más de 40 años de experiencia transformando nuestro valor y
