@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   title: "Server LM — Conversa con tus documentos",
   description: "Como NotebookLM, pero para ti y toda tu organización. Server LM conecta a cada persona con los documentos que necesita — y solo con esos.",
   icons: {
-    icon: "/logo_serverlm_A.png",
-    apple: "/logo_serverlm_A.png",
+    icon: "/logo_serverlm.png",
+    apple: "/logo_serverlm.png",
   },
 };
 
