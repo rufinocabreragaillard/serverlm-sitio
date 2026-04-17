@@ -87,6 +87,9 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-[var(--gray-dark)] mb-2">
             Server LM
           </h2>
+          <p className="text-base font-normal text-[var(--gray-mid)] mb-2">
+            Server de servicio, LM de conversación inteligente
+          </p>
           <h3 className="text-2xl font-semibold text-[var(--gray-dark)] mb-6">
             Innovación &nbsp;&amp;&nbsp; Experiencia
           </h3>
