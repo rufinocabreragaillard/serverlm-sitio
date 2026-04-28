@@ -1,34 +1,41 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Paleta alineada con /seguridad/frontend/src/app/globals.css
+   text-primary #1d1d1f · text-heading #374151 · text-muted #86868b
+   bg-body #F4F5F8 · brand #ebebeb
+   ============================================================ */
 :root {
   --background: #ffffff;
-  --foreground: #1a1a1a;
-  --gray-dark: #2d2d2d;
-  --gray-mid: #6b6b6b;
-  --gray-light: #d4d4d4;
-  --gray-very-light: #f5f5f5;
-  --accent: #2d2d2d;
-  --accent-light: #f0f0f0;
+  --foreground: #1d1d1f;            /* text-primary (negro Apple) */
+  --gray-dark: #1d1d1f;             /* títulos h1/h2/h3 — alineado con text-primary */
+  --gray-heading: #374151;          /* gris oscuro — text-heading */
+  --gray-mid: #86868b;              /* gris medio — text-muted */
+  --gray-light: #d4d4d4;            /* bordes */
+  --gray-very-light: #F4F5F8;       /* fondos de sección — bg-body */
+  --accent: #1d1d1f;                /* CTA — gris muy oscuro (no azul) */
+  --accent-light: #ebebeb;          /* brand — gris claro */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-gray-dark: var(--gray-dark);
+  --color-gray-heading: var(--gray-heading);
   --color-gray-mid: var(--gray-mid);
   --color-gray-light: var(--gray-light);
   --color-gray-very-light: var(--gray-very-light);
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
   --font-sans: var(--font-sans);
-  --font-serif: var(--font-serif);
-  --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2 {

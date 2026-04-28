@@ -128,10 +128,10 @@ export default function Home() {
               },
               {
                 name: "Team",
-                desc: "Para equipos que colaboran.",
+                desc: "Para equipos  y  departamentos que colaboran.",
                 tokens: "120M tokens / mes",
                 docs: "50.000 documentos",
-                features: ["Todo en Personal", "Control por área"],
+                features: ["Todo en Personal", "Acceso por área"],
                 cta: "Contactar",
                 ctaHref: "mailto:rufinocabreragaillard@gmail.com",
                 highlight: false,
