@@ -83,13 +83,16 @@ export default function Home() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[var(--gray-light)]">
         <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-          <Image
-            src="/logo_Server_LM.png"
-            alt="Server LM"
-            width={480}
-            height={160}
-            className="h-32 w-auto"
-          />
+          <div className="flex items-center gap-2">
+            <Image
+              src="/isotipo_serverlm.png"
+              alt="Server LM"
+              width={32}
+              height={32}
+              className="h-8 w-auto"
+            />
+            <span className="text-[var(--gray-dark)] font-semibold text-base tracking-tight">Server LM</span>
+          </div>
           <div className="flex items-center gap-6 text-sm text-[var(--gray-mid)]">
             <a href="#que-hace" className="hover:text-[var(--foreground)] transition-colors">{t("nav.producto")}</a>
             <a href="#quienes-somos" className="hover:text-[var(--foreground)] transition-colors">{t("nav.nosotros")}</a>
@@ -258,13 +261,16 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="border-t border-[var(--gray-light)] py-8 px-6">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <Image
-            src="/logo_ServerLM_gris.png"
-            alt="Server LM"
-            width={80}
-            height={28}
-            className="h-6 w-auto opacity-60"
-          />
+          <div className="flex items-center gap-2 opacity-60">
+            <Image
+              src="/isotipo_serverlm.png"
+              alt="Server LM"
+              width={20}
+              height={20}
+              className="h-5 w-auto"
+            />
+            <span className="text-xs font-semibold text-[var(--gray-dark)] tracking-tight">Server LM</span>
+          </div>
           <p className="text-xs text-[var(--gray-mid)]">
             {t("footer.copyright", { year: new Date().getFullYear() })}
           </p>

@@ -13,8 +13,8 @@
   --gray-mid: #86868b;              /* gris medio — text-muted */
   --gray-light: #d4d4d4;            /* bordes */
   --gray-very-light: #F4F5F8;       /* fondos de sección — bg-body */
-  --accent: #1d1d1f;                /* CTA — gris muy oscuro (no azul) */
-  --accent-light: #ebebeb;          /* brand — gris claro */
+  --accent: #4089cd;                /* CTA — azul Server LM */
+  --accent-light: #eaf2fb;          /* azul muy claro — fondo plan destacado */
 }
 
 @theme inline {
