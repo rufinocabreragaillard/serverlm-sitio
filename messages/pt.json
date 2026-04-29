@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "title": "Server LM — Converse com seus documentos",
+    "description": "Como o NotebookLM, mas para você e toda a sua organização. O Server LM conecta cada pessoa aos documentos de que precisa — e somente a esses."
+  },
+  "nav": {
+    "producto": "Produto",
+    "nosotros": "Sobre",
+    "planes": "Planos",
+    "probarGratis": "Testar grátis"
+  },
+  "hero": {
+    "eyebrow": "Como o NotebookLM, mas para você e toda a sua organização",
+    "titulo": "Converse com seus documentos",
+    "descripcion": "O Server LM conecta cada pessoa aos seus próprios dados, ou aos dados da sua empresa, com os documentos de que precisa — e somente a esses. Como conversar com o NotebookLM, mas com todos os seus documentos. Um contador conversa com suas faturas. Um advogado com seus contratos. Um gerente com seus relatórios. Cada um vê o que é seu, sem filtros manuais nem configurações complexas.",
+    "cta": "Testar grátis — 15 dias",
+    "bullets": {
+      "conversacion": {
+        "titulo": "Conversa natural",
+        "desc": "Pergunte em linguagem natural, obtenha respostas dos seus documentos."
+      },
+      "acceso": {
+        "titulo": "Acesso controlado",
+        "desc": "Cada usuário vê apenas o que seu cargo e área permitem. Sem configurações manuais."
+      },
+      "escala": {
+        "titulo": "Qualquer escala",
+        "desc": "De um profissional independente a uma corporação com milhões de documentos."
+      }
+    }
+  },
+  "nosotros": {
+    "eyebrow": "Quem somos",
+    "marca": "Server LM",
+    "subtitulo": "Server de serviço, LM de conversação inteligente",
+    "lema": "Inovação & Experiência",
+    "descripcion": "Temos mais de 40 anos de experiência transformando nosso valor e navegando com sucesso pelas ondas tecnológicas."
+  },
+  "pricing": {
+    "eyebrow": "Planos",
+    "titulo": "O plano de que você precisa",
+    "masPopular": "Mais popular",
+    "tokensSufijo": "tokens / mês",
+    "personal": {
+      "nombre": "Personal",
+      "desc": "Para profissionais independentes.",
+      "tokens": "1M tokens / mês",
+      "docs": "5.000 documentos",
+      "f1": "Conversa com seus documentos",
+      "f2": "Focos em linguagem natural",
+      "cta": "Testar grátis"
+    },
+    "team": {
+      "nombre": "Team",
+      "desc": "Para equipes e departamentos que colaboram.",
+      "tokens": "120M tokens / mês",
+      "docs": "50.000 documentos",
+      "f1": "Tudo do Personal",
+      "f2": "Acesso por área",
+      "cta": "Contato"
+    },
+    "enterprise": {
+      "nombre": "Enterprise",
+      "desc": "Para empresas com controle avançado.",
+      "tokens": "10M tokens base + extras",
+      "docs": "500.000 documentos",
+      "f1": "Tudo do Team",
+      "f2": "Controle por área e cargo",
+      "f3": "Servidor cliente local",
+      "f4": "Personalização",
+      "f5": "Escolha de LLMs",
+      "cta": "Contato"
+    },
+    "corp": {
+      "nombre": "Corp",
+      "desc": "Para corporações e holdings.",
+      "tokens": "20M tokens base + extras",
+      "docs": "1.000.000+ documentos",
+      "f1": "Tudo do Enterprise",
+      "f2": "Multi-entidade (Holdings)",
+      "f3": "Storage próprio",
+      "cta": "Contato"
+    }
+  },
+  "registro": {
+    "eyebrow": "Comece hoje",
+    "titulo": "15 dias grátis",
+    "subtitulo": "Sem compromisso. Cancele quando quiser.",
+    "email": "voce@email.com",
+    "password": "Senha",
+    "cta": "Criar conta grátis",
+    "legal": "Ao se registrar, você aceita nossos termos de uso. Será solicitada uma forma de pagamento para ativar o plano e nada será cobrado durante o período de teste. Só será cobrado (e avisado) se você entrar no sistema após o término do período de teste."
+  },
+  "footer": {
+    "copyright": "© {year} Server LM — Agencia AAS. Todos os direitos reservados."
+  },
+  "selector": {
+    "label": "Idioma"
+  }
+}

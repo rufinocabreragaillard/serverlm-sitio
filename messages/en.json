@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "title": "Server LM — Chat with your documents",
+    "description": "Like NotebookLM, but for you and your entire organization. Server LM connects every person to the documents they need — and only those."
+  },
+  "nav": {
+    "producto": "Product",
+    "nosotros": "About",
+    "planes": "Plans",
+    "probarGratis": "Try free"
+  },
+  "hero": {
+    "eyebrow": "Like NotebookLM, but for you and your entire organization",
+    "titulo": "Chat with your documents",
+    "descripcion": "Server LM connects each person with their own data, or their company's data, to the documents they need — and only those. Like chatting with NotebookLM but with all your documents. An accountant talks to their invoices. A lawyer to their contracts. A manager to their reports. Each one sees their own, without manual filters or complex configurations.",
+    "cta": "Try free — 15 days",
+    "bullets": {
+      "conversacion": {
+        "titulo": "Natural conversation",
+        "desc": "Ask in plain language, get answers from your documents."
+      },
+      "acceso": {
+        "titulo": "Controlled access",
+        "desc": "Each user sees only what their role and area allow. No manual setup."
+      },
+      "escala": {
+        "titulo": "Any scale",
+        "desc": "From an independent professional to a corporation with millions of documents."
+      }
+    }
+  },
+  "nosotros": {
+    "eyebrow": "About us",
+    "marca": "Server LM",
+    "subtitulo": "Server for service, LM for smart conversation",
+    "lema": "Innovation & Experience",
+    "descripcion": "We have over 40 years of experience transforming value and successfully riding the waves of technology."
+  },
+  "pricing": {
+    "eyebrow": "Plans",
+    "titulo": "The plan you need",
+    "masPopular": "Most popular",
+    "tokensSufijo": "tokens / month",
+    "personal": {
+      "nombre": "Personal",
+      "desc": "For independent professionals.",
+      "tokens": "1M tokens / month",
+      "docs": "5,000 documents",
+      "f1": "Chat with your documents",
+      "f2": "Natural-language focuses",
+      "cta": "Try free"
+    },
+    "team": {
+      "nombre": "Team",
+      "desc": "For teams and departments that collaborate.",
+      "tokens": "120M tokens / month",
+      "docs": "50,000 documents",
+      "f1": "Everything in Personal",
+      "f2": "Access by area",
+      "cta": "Contact us"
+    },
+    "enterprise": {
+      "nombre": "Enterprise",
+      "desc": "For companies with advanced control.",
+      "tokens": "10M base tokens + extras",
+      "docs": "500,000 documents",
+      "f1": "Everything in Team",
+      "f2": "Control by area and role",
+      "f3": "Local client server",
+      "f4": "Customization",
+      "f5": "LLM selection",
+      "cta": "Contact us"
+    },
+    "corp": {
+      "nombre": "Corp",
+      "desc": "For corporations and holdings.",
+      "tokens": "20M base tokens + extras",
+      "docs": "1,000,000+ documents",
+      "f1": "Everything in Enterprise",
+      "f2": "Multi-entity (Holdings)",
+      "f3": "Own storage",
+      "cta": "Contact us"
+    }
+  },
+  "registro": {
+    "eyebrow": "Start today",
+    "titulo": "15 days free",
+    "subtitulo": "No commitment. Cancel whenever you want.",
+    "email": "you@email.com",
+    "password": "Password",
+    "cta": "Create free account",
+    "legal": "By signing up you accept our terms of use. A payment method will be requested to activate your plan and you will not be charged during the trial period. You will only be charged (and notified) if you enter the system after the trial period ends."
+  },
+  "footer": {
+    "copyright": "© {year} Server LM — Agencia AAS. All rights reserved."
+  },
+  "selector": {
+    "label": "Language"
+  }
+}

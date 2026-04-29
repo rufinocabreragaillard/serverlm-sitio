@@ -1,6 +1,82 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { SelectorIdioma } from "../components/SelectorIdioma";
 
 export default function Home() {
+  const t = useTranslations();
+
+  const bullets = [
+    {
+      titulo: t("hero.bullets.conversacion.titulo"),
+      desc: t("hero.bullets.conversacion.desc"),
+    },
+    {
+      titulo: t("hero.bullets.acceso.titulo"),
+      desc: t("hero.bullets.acceso.desc"),
+    },
+    {
+      titulo: t("hero.bullets.escala.titulo"),
+      desc: t("hero.bullets.escala.desc"),
+    },
+  ];
+
+  const planes = [
+    {
+      key: "personal",
+      nombre: t("pricing.personal.nombre"),
+      desc: t("pricing.personal.desc"),
+      tokens: t("pricing.personal.tokens"),
+      docs: t("pricing.personal.docs"),
+      features: [t("pricing.personal.f1"), t("pricing.personal.f2")],
+      cta: t("pricing.personal.cta"),
+      ctaHref: "#registro",
+      highlight: false,
+    },
+    {
+      key: "team",
+      nombre: t("pricing.team.nombre"),
+      desc: t("pricing.team.desc"),
+      tokens: t("pricing.team.tokens"),
+      docs: t("pricing.team.docs"),
+      features: [t("pricing.team.f1"), t("pricing.team.f2")],
+      cta: t("pricing.team.cta"),
+      ctaHref: "mailto:rufinocabreragaillard@gmail.com",
+      highlight: false,
+    },
+    {
+      key: "enterprise",
+      nombre: t("pricing.enterprise.nombre"),
+      desc: t("pricing.enterprise.desc"),
+      tokens: t("pricing.enterprise.tokens"),
+      docs: t("pricing.enterprise.docs"),
+      features: [
+        t("pricing.enterprise.f1"),
+        t("pricing.enterprise.f2"),
+        t("pricing.enterprise.f3"),
+        t("pricing.enterprise.f4"),
+        t("pricing.enterprise.f5"),
+      ],
+      cta: t("pricing.enterprise.cta"),
+      ctaHref: "mailto:rufinocabreragaillard@gmail.com",
+      highlight: true,
+    },
+    {
+      key: "corp",
+      nombre: t("pricing.corp.nombre"),
+      desc: t("pricing.corp.desc"),
+      tokens: t("pricing.corp.tokens"),
+      docs: t("pricing.corp.docs"),
+      features: [
+        t("pricing.corp.f1"),
+        t("pricing.corp.f2"),
+        t("pricing.corp.f3"),
+      ],
+      cta: t("pricing.corp.cta"),
+      ctaHref: "mailto:rufinocabreragaillard@gmail.com",
+      highlight: false,
+    },
+  ];
+
   return (
     <main className="flex flex-col min-h-full">
 
@@ -15,14 +91,15 @@ export default function Home() {
             className="h-32 w-auto"
           />
           <div className="flex items-center gap-6 text-sm text-[var(--gray-mid)]">
-            <a href="#que-hace" className="hover:text-[var(--foreground)] transition-colors">Producto</a>
-            <a href="#quienes-somos" className="hover:text-[var(--foreground)] transition-colors">Nosotros</a>
-            <a href="#pricing" className="hover:text-[var(--foreground)] transition-colors">Planes</a>
+            <a href="#que-hace" className="hover:text-[var(--foreground)] transition-colors">{t("nav.producto")}</a>
+            <a href="#quienes-somos" className="hover:text-[var(--foreground)] transition-colors">{t("nav.nosotros")}</a>
+            <a href="#pricing" className="hover:text-[var(--foreground)] transition-colors">{t("nav.planes")}</a>
+            <SelectorIdioma />
             <a
               href="https://app.serverlm.ai"
               className="bg-[var(--accent)] text-white text-sm px-4 py-2 rounded-md hover:opacity-90 transition-opacity"
             >
-              Probar gratis
+              {t("nav.probarGratis")}
             </a>
           </div>
         </div>
@@ -32,44 +109,28 @@ export default function Home() {
       <section id="que-hace" className="pt-32 pb-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-            Como NotebookLM, pero para ti y toda tu organización
+            {t("hero.eyebrow")}
           </p>
           <h1 className="text-5xl font-bold text-[var(--gray-dark)] leading-tight mb-6">
-            Conversa con tus documentos
+            {t("hero.titulo")}
           </h1>
           <p className="text-lg text-[var(--gray-mid)] leading-relaxed mb-10">
-            Server LM conecta a cada persona con sus propios datos, o los datos de su empresa
-            con los documentos que necesita — y solo con esos. Como chatear con NotebookLM pero
-            con todos tus documentos. Un contador habla con sus facturas. Un abogado con sus contratos.
-            Un gerente con sus reportes. Cada uno ve lo suyo, sin filtros manuales ni configuraciones complejas.
+            {t("hero.descripcion")}
           </p>
           <a
             href="#registro"
             className="inline-block bg-[var(--accent)] text-white px-8 py-3 rounded-md text-base font-medium hover:opacity-90 transition-opacity"
           >
-            Probar gratis — 15 días
+            {t("hero.cta")}
           </a>
         </div>
 
         {/* Bullets */}
         <div className="max-w-4xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Conversación natural",
-              desc: "Pregunta en lenguaje normal, obtén respuestas desde tus documentos.",
-            },
-            {
-              title: "Acceso controlado",
-              desc: "Cada usuario ve solo lo que su cargo y área permiten. Sin configuraciones manuales.",
-            },
-            {
-              title: "Cualquier escala",
-              desc: "Desde un profesional independiente hasta una corporación con millones de documentos.",
-            },
-          ].map((item) => (
-            <div key={item.title} className="text-left p-6 border border-[var(--gray-light)] rounded-lg">
+          {bullets.map((item) => (
+            <div key={item.titulo} className="text-left p-6 border border-[var(--gray-light)] rounded-lg">
               <div className="w-2 h-2 rounded-full bg-[var(--accent)] mb-4" />
-              <h3 className="font-semibold text-[var(--gray-dark)] mb-2">{item.title}</h3>
+              <h3 className="font-semibold text-[var(--gray-dark)] mb-2">{item.titulo}</h3>
               <p className="text-sm text-[var(--gray-mid)] leading-relaxed">{item.desc}</p>
             </div>
           ))}
@@ -82,20 +143,19 @@ export default function Home() {
       <section id="quienes-somos" className="py-24 px-6 bg-[var(--gray-very-light)]">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-            Quiénes somos
+            {t("nosotros.eyebrow")}
           </p>
           <h2 className="text-3xl font-bold text-[var(--gray-dark)] mb-2">
-            Server LM
+            {t("nosotros.marca")}
           </h2>
           <p className="text-base font-normal text-[var(--gray-mid)] mb-2">
-            Server de servicio, LM de conversación inteligente
+            {t("nosotros.subtitulo")}
           </p>
           <h3 className="text-2xl font-semibold text-[var(--gray-dark)] mb-6">
-            Innovación &nbsp;&amp;&nbsp; Experiencia
+            {t("nosotros.lema")}
           </h3>
           <p className="text-lg text-[var(--gray-mid)] leading-relaxed">
-            Tenemos más de 40 años de experiencia transformando nuestro valor y
-            navegando exitosamente las olas tecnológicas.
+            {t("nosotros.descripcion")}
           </p>
         </div>
       </section>
@@ -107,68 +167,17 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-              Planes
+              {t("pricing.eyebrow")}
             </p>
             <h2 className="text-3xl font-bold text-[var(--gray-dark)]">
-              El plan que necesitas
+              {t("pricing.titulo")}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                name: "Personal",
-                desc: "Para profesionales independientes.",
-                tokens: "1M tokens / mes",
-                docs: "5.000 documentos",
-                features: ["Conversación con tus documentos", "Focos en lenguaje natural"],
-                cta: "Probar gratis",
-                ctaHref: "#registro",
-                highlight: false,
-              },
-              {
-                name: "Team",
-                desc: "Para equipos  y  departamentos que colaboran.",
-                tokens: "120M tokens / mes",
-                docs: "50.000 documentos",
-                features: ["Todo en Personal", "Acceso por área"],
-                cta: "Contactar",
-                ctaHref: "mailto:rufinocabreragaillard@gmail.com",
-                highlight: false,
-              },
-              {
-                name: "Enterprise",
-                desc: "Para empresas con control avanzado.",
-                tokens: "10M tokens base + extras",
-                docs: "500.000 documentos",
-                features: [
-                  "Todo en Team",
-                  "Control por área y cargo",
-                  "Servidor cliente local",
-                  "Personalización",
-                  "Elección de LLMs",
-                ],
-                cta: "Contactar",
-                ctaHref: "mailto:rufinocabreragaillard@gmail.com",
-                highlight: true,
-              },
-              {
-                name: "Corp",
-                desc: "Para corporaciones y holdings.",
-                tokens: "20M tokens base + extras",
-                docs: "1.000.000+ documentos",
-                features: [
-                  "Todo en Enterprise",
-                  "Multi-entidad (Holdings)",
-                  "Storage propio",
-                ],
-                cta: "Contactar",
-                ctaHref: "mailto:rufinocabreragaillard@gmail.com",
-                highlight: false,
-              },
-            ].map((plan) => (
+            {planes.map((plan) => (
               <div
-                key={plan.name}
+                key={plan.key}
                 className={`flex flex-col p-6 rounded-lg border ${
                   plan.highlight
                     ? "border-[var(--accent)] bg-[var(--accent-light)]"
@@ -177,10 +186,10 @@ export default function Home() {
               >
                 {plan.highlight && (
                   <span className="text-xs font-semibold text-[var(--accent)] uppercase tracking-widest mb-2">
-                    Más popular
+                    {t("pricing.masPopular")}
                   </span>
                 )}
-                <h3 className="text-xl font-bold text-[var(--gray-dark)] mb-1">{plan.name}</h3>
+                <h3 className="text-xl font-bold text-[var(--gray-dark)] mb-1">{plan.nombre}</h3>
                 <p className="text-sm text-[var(--gray-mid)] mb-4">{plan.desc}</p>
                 <p className="text-xs text-[var(--gray-mid)] mb-1">{plan.tokens}</p>
                 <p className="text-xs text-[var(--gray-mid)] mb-6">{plan.docs}</p>
@@ -214,33 +223,33 @@ export default function Home() {
       <section id="registro" className="py-24 px-6 bg-[var(--gray-very-light)]">
         <div className="max-w-md mx-auto text-center">
           <p className="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-            Empieza hoy
+            {t("registro.eyebrow")}
           </p>
           <h2 className="text-3xl font-bold text-[var(--gray-dark)] mb-3">
-            15 días gratis
+            {t("registro.titulo")}
           </h2>
           <p className="text-[var(--gray-mid)] mb-8">
-            Sin compromiso. Cancela cuando quieras.
+            {t("registro.subtitulo")}
           </p>
           <form className="flex flex-col gap-4 text-left">
             <input
               type="email"
-              placeholder="tu@email.com"
+              placeholder={t("registro.email")}
               className="w-full px-4 py-3 border border-[var(--gray-light)] rounded-md text-sm focus:outline-none focus:border-[var(--accent)]"
             />
             <input
               type="password"
-              placeholder="Contraseña"
+              placeholder={t("registro.password")}
               className="w-full px-4 py-3 border border-[var(--gray-light)] rounded-md text-sm focus:outline-none focus:border-[var(--accent)]"
             />
             <a
               href="mailto:rufinocabreragaillard@gmail.com"
               className="w-full bg-[var(--accent)] text-white py-3 rounded-md text-sm font-medium hover:opacity-90 transition-opacity text-center block"
             >
-              Crear cuenta gratis
+              {t("registro.cta")}
             </a>
             <p className="text-xs text-center text-[var(--gray-mid)]">
-              Al registrarte aceptas nuestros términos de uso. Se solicitará método de pago al activar tu plan y no se cobrará durante el periodo de prueba. Solamente se cobrará (y se avisará) si entras al sistema después del vencimiento del período de prueba.
+              {t("registro.legal")}
             </p>
           </form>
         </div>
@@ -257,7 +266,7 @@ export default function Home() {
             className="h-6 w-auto opacity-60"
           />
           <p className="text-xs text-[var(--gray-mid)]">
-            © {new Date().getFullYear()} Server LM — Agencia AAS. Todos los derechos reservados.
+            {t("footer.copyright", { year: new Date().getFullYear() })}
           </p>
         </div>
       </footer>

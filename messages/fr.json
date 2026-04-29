@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "title": "Server LM — Discutez avec vos documents",
+    "description": "Comme NotebookLM, mais pour vous et toute votre organisation. Server LM connecte chaque personne aux documents dont elle a besoin — et uniquement à ceux-là."
+  },
+  "nav": {
+    "producto": "Produit",
+    "nosotros": "À propos",
+    "planes": "Plans",
+    "probarGratis": "Essai gratuit"
+  },
+  "hero": {
+    "eyebrow": "Comme NotebookLM, mais pour vous et toute votre organisation",
+    "titulo": "Discutez avec vos documents",
+    "descripcion": "Server LM connecte chaque personne à ses propres données, ou aux données de son entreprise, avec les documents dont elle a besoin — et uniquement avec ceux-là. Comme discuter avec NotebookLM, mais avec tous vos documents. Un comptable parle avec ses factures. Un avocat avec ses contrats. Un manager avec ses rapports. Chacun voit ce qui le concerne, sans filtres manuels ni configurations complexes.",
+    "cta": "Essai gratuit — 15 jours",
+    "bullets": {
+      "conversacion": {
+        "titulo": "Conversation naturelle",
+        "desc": "Posez vos questions en langage naturel, obtenez des réponses depuis vos documents."
+      },
+      "acceso": {
+        "titulo": "Accès contrôlé",
+        "desc": "Chaque utilisateur ne voit que ce que son poste et son secteur permettent. Sans configurations manuelles."
+      },
+      "escala": {
+        "titulo": "Toutes les tailles",
+        "desc": "D'un professionnel indépendant à une grande entreprise avec des millions de documents."
+      }
+    }
+  },
+  "nosotros": {
+    "eyebrow": "Qui sommes-nous",
+    "marca": "Server LM",
+    "subtitulo": "Server pour le service, LM pour la conversation intelligente",
+    "lema": "Innovation & Expérience",
+    "descripcion": "Plus de 40 ans d'expérience à transformer notre valeur et à naviguer avec succès sur les vagues technologiques."
+  },
+  "pricing": {
+    "eyebrow": "Plans",
+    "titulo": "Le plan qu'il vous faut",
+    "masPopular": "Le plus populaire",
+    "tokensSufijo": "tokens / mois",
+    "personal": {
+      "nombre": "Personal",
+      "desc": "Pour les professionnels indépendants.",
+      "tokens": "1M tokens / mois",
+      "docs": "5 000 documents",
+      "f1": "Conversation avec vos documents",
+      "f2": "Focus en langage naturel",
+      "cta": "Essai gratuit"
+    },
+    "team": {
+      "nombre": "Team",
+      "desc": "Pour les équipes et services qui collaborent.",
+      "tokens": "120M tokens / mois",
+      "docs": "50 000 documents",
+      "f1": "Tout Personal",
+      "f2": "Accès par secteur",
+      "cta": "Nous contacter"
+    },
+    "enterprise": {
+      "nombre": "Enterprise",
+      "desc": "Pour les entreprises avec un contrôle avancé.",
+      "tokens": "10M tokens de base + extras",
+      "docs": "500 000 documents",
+      "f1": "Tout Team",
+      "f2": "Contrôle par secteur et poste",
+      "f3": "Serveur client local",
+      "f4": "Personnalisation",
+      "f5": "Choix des LLM",
+      "cta": "Nous contacter"
+    },
+    "corp": {
+      "nombre": "Corp",
+      "desc": "Pour les groupes et holdings.",
+      "tokens": "20M tokens de base + extras",
+      "docs": "1 000 000+ documents",
+      "f1": "Tout Enterprise",
+      "f2": "Multi-entité (Holdings)",
+      "f3": "Stockage propre",
+      "cta": "Nous contacter"
+    }
+  },
+  "registro": {
+    "eyebrow": "Commencez aujourd'hui",
+    "titulo": "15 jours gratuits",
+    "subtitulo": "Sans engagement. Annulez à tout moment.",
+    "email": "vous@email.com",
+    "password": "Mot de passe",
+    "cta": "Créer un compte gratuit",
+    "legal": "En vous inscrivant, vous acceptez nos conditions d'utilisation. Un moyen de paiement vous sera demandé à l'activation de votre plan et rien ne sera facturé pendant la période d'essai. Vous ne serez facturé (et averti) que si vous entrez dans le système après la fin de la période d'essai."
+  },
+  "footer": {
+    "copyright": "© {year} Server LM — Agencia AAS. Tous droits réservés."
+  },
+  "selector": {
+    "label": "Langue"
+  }
+}

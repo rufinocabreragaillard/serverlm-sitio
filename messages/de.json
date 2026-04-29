@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "title": "Server LM — Sprich mit deinen Dokumenten",
+    "description": "Wie NotebookLM, aber für dich und deine gesamte Organisation. Server LM verbindet jede Person mit den Dokumenten, die sie braucht — und nur mit diesen."
+  },
+  "nav": {
+    "producto": "Produkt",
+    "nosotros": "Über uns",
+    "planes": "Pläne",
+    "probarGratis": "Kostenlos testen"
+  },
+  "hero": {
+    "eyebrow": "Wie NotebookLM, aber für dich und deine gesamte Organisation",
+    "titulo": "Sprich mit deinen Dokumenten",
+    "descripcion": "Server LM verbindet jede Person mit ihren eigenen Daten oder den Daten ihres Unternehmens — mit den Dokumenten, die sie braucht, und nur mit diesen. Wie ein Chat mit NotebookLM, aber mit all deinen Dokumenten. Ein Buchhalter spricht mit seinen Rechnungen. Eine Anwältin mit ihren Verträgen. Eine Managerin mit ihren Berichten. Jeder sieht das Seine, ohne manuelle Filter oder komplexe Konfigurationen.",
+    "cta": "Kostenlos testen — 15 Tage",
+    "bullets": {
+      "conversacion": {
+        "titulo": "Natürliche Konversation",
+        "desc": "Frage in normaler Sprache und erhalte Antworten aus deinen Dokumenten."
+      },
+      "acceso": {
+        "titulo": "Kontrollierter Zugriff",
+        "desc": "Jeder Nutzer sieht nur das, was Position und Bereich erlauben. Ohne manuelle Konfiguration."
+      },
+      "escala": {
+        "titulo": "Jede Größe",
+        "desc": "Vom unabhängigen Profi bis zum Konzern mit Millionen von Dokumenten."
+      }
+    }
+  },
+  "nosotros": {
+    "eyebrow": "Wer wir sind",
+    "marca": "Server LM",
+    "subtitulo": "Server für Service, LM für intelligente Konversation",
+    "lema": "Innovation & Erfahrung",
+    "descripcion": "Über 40 Jahre Erfahrung darin, unseren Wert zu transformieren und die Wellen der Technologie erfolgreich zu meistern."
+  },
+  "pricing": {
+    "eyebrow": "Pläne",
+    "titulo": "Der Plan, den du brauchst",
+    "masPopular": "Am beliebtesten",
+    "tokensSufijo": "Tokens / Monat",
+    "personal": {
+      "nombre": "Personal",
+      "desc": "Für unabhängige Fachleute.",
+      "tokens": "1M Tokens / Monat",
+      "docs": "5.000 Dokumente",
+      "f1": "Sprich mit deinen Dokumenten",
+      "f2": "Fokus in natürlicher Sprache",
+      "cta": "Kostenlos testen"
+    },
+    "team": {
+      "nombre": "Team",
+      "desc": "Für Teams und Abteilungen, die zusammenarbeiten.",
+      "tokens": "120M Tokens / Monat",
+      "docs": "50.000 Dokumente",
+      "f1": "Alles aus Personal",
+      "f2": "Zugriff nach Bereich",
+      "cta": "Kontakt"
+    },
+    "enterprise": {
+      "nombre": "Enterprise",
+      "desc": "Für Unternehmen mit erweiterter Kontrolle.",
+      "tokens": "10M Basis-Tokens + Extras",
+      "docs": "500.000 Dokumente",
+      "f1": "Alles aus Team",
+      "f2": "Kontrolle nach Bereich und Position",
+      "f3": "Lokaler Client-Server",
+      "f4": "Anpassung",
+      "f5": "LLM-Auswahl",
+      "cta": "Kontakt"
+    },
+    "corp": {
+      "nombre": "Corp",
+      "desc": "Für Konzerne und Holdings.",
+      "tokens": "20M Basis-Tokens + Extras",
+      "docs": "1.000.000+ Dokumente",
+      "f1": "Alles aus Enterprise",
+      "f2": "Mehrere Einheiten (Holdings)",
+      "f3": "Eigener Speicher",
+      "cta": "Kontakt"
+    }
+  },
+  "registro": {
+    "eyebrow": "Heute starten",
+    "titulo": "15 Tage kostenlos",
+    "subtitulo": "Ohne Verpflichtung. Jederzeit kündbar.",
+    "email": "du@email.com",
+    "password": "Passwort",
+    "cta": "Kostenloses Konto erstellen",
+    "legal": "Mit der Registrierung akzeptierst du unsere Nutzungsbedingungen. Eine Zahlungsmethode wird zur Aktivierung deines Plans angefragt; während der Testphase fällt keine Gebühr an. Es wird nur abgerechnet (und du wirst informiert), wenn du das System nach Ablauf der Testphase nutzt."
+  },
+  "footer": {
+    "copyright": "© {year} Server LM — Agencia AAS. Alle Rechte vorbehalten."
+  },
+  "selector": {
+    "label": "Sprache"
+  }
+}
