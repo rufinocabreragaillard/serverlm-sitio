@@ -21,8 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     icons: {
-      icon: "/logo_serverlm_A.png",
-      apple: "/logo_serverlm_A.png",
+      icon: "/isotipo_serverlm.png",
+      apple: "/isotipo_serverlm.png",
     },
   };
 }
