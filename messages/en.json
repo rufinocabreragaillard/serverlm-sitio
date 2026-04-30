@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Server LM — Chat with your documents",
+    "title": "Server LM — Documents at your service",
     "description": "Like NotebookLM, but for you and your entire organization. Server LM connects every person to the documents they need — and only those."
   },
   "nav": {
@@ -11,7 +11,7 @@
   },
   "hero": {
     "eyebrow": "Like NotebookLM, but for you and your entire organization",
-    "titulo": "Chat with your documents",
+    "titulo": "Documents at your service",
     "descripcion": "Server LM connects each person with their own data, or their company's data, to the documents they need — and only those. Like chatting with NotebookLM but with all your documents. An accountant talks to their invoices. A lawyer to their contracts. A manager to their reports. Each one sees their own, without manual filters or complex configurations.",
     "cta": "Try free — 15 days",
     "bullets": {

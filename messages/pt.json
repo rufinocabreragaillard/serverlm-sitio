@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Server LM — Converse com seus documentos",
+    "title": "Server LM — Documentos ao seu serviço",
     "description": "Como o NotebookLM, mas para você e toda a sua organização. O Server LM conecta cada pessoa aos documentos de que precisa — e somente a esses."
   },
   "nav": {
@@ -11,7 +11,7 @@
   },
   "hero": {
     "eyebrow": "Como o NotebookLM, mas para você e toda a sua organização",
-    "titulo": "Converse com seus documentos",
+    "titulo": "Documentos ao seu serviço",
     "descripcion": "O Server LM conecta cada pessoa aos seus próprios dados, ou aos dados da sua empresa, com os documentos de que precisa — e somente a esses. Como conversar com o NotebookLM, mas com todos os seus documentos. Um contador conversa com suas faturas. Um advogado com seus contratos. Um gerente com seus relatórios. Cada um vê o que é seu, sem filtros manuais nem configurações complexas.",
     "cta": "Testar grátis — 15 dias",
     "bullets": {
