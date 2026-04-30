@@ -87,9 +87,9 @@ export default function Home() {
             <Image
               src="/isotipo_serverlm.png"
               alt="Server LM"
-              width={32}
-              height={32}
-              className="h-8 w-auto"
+              width={21}
+              height={21}
+              className="h-[1.33rem] w-auto"
             />
             <span className="text-[var(--gray-dark)] font-semibold text-base tracking-tight">Server LM</span>
           </div>
@@ -265,9 +265,9 @@ export default function Home() {
             <Image
               src="/isotipo_serverlm.png"
               alt="Server LM"
-              width={20}
-              height={20}
-              className="h-5 w-auto"
+              width={13}
+              height={13}
+              className="h-[0.83rem] w-auto"
             />
             <span className="text-xs font-semibold text-[var(--gray-dark)] tracking-tight">Server LM</span>
           </div>
