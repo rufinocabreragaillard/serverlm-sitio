@@ -1,98 +1,209 @@
 {
   "metadata": {
     "title": "Server LM — Documentos ao seu serviço",
-    "description": "Como o NotebookLM, mas para você e toda a sua organização. O Server LM conecta cada pessoa aos documentos de que precisa — e somente a esses."
+    "description": "Pergunte. Analise. Decida. Sobre seus próprios documentos. Respostas precisas, com citações — sem que seus arquivos saiam da sua rede."
   },
   "nav": {
-    "producto": "Produto",
-    "nosotros": "Sobre",
+    "produto": "Produto",
+    "capacidades": "Capacidades",
+    "comoFunciona": "Como funciona",
+    "seguridad": "Segurança",
     "planes": "Planos",
-    "probarGratis": "Testar grátis"
+    "iniciarSesion": "Entrar",
+    "cta": "Cadastre-se e teste"
   },
   "hero": {
-    "eyebrow": "Como o NotebookLM, mas para você e toda a sua organização",
-    "titulo": "Documentos ao seu serviço",
-    "descripcion": "O Server LM conecta cada pessoa aos seus próprios dados, ou aos dados da sua empresa, com os documentos de que precisa — e somente a esses. Como conversar com o NotebookLM, mas com todos os seus documentos. Um contador conversa com suas faturas. Um advogado com seus contratos. Um gerente com seus relatórios. Cada um vê o que é seu, sem filtros manuais nem configurações complexas.",
-    "cta": "Testar grátis — 15 dias",
-    "bullets": {
-      "conversacion": {
-        "titulo": "Conversa natural",
-        "desc": "Pergunte em linguagem natural, obtenha respostas dos seus documentos."
-      },
-      "acceso": {
-        "titulo": "Acesso controlado",
-        "desc": "Cada usuário vê apenas o que seu cargo e área permitem. Sem configurações manuais."
-      },
-      "escala": {
-        "titulo": "Qualquer escala",
-        "desc": "De um profissional independente a uma corporação com milhões de documentos."
-      }
-    }
+    "headlineLead": "Pergunte. Analise. Decida.",
+    "headlineAccent": "Sobre seus próprios documentos.",
+    "subtitle": "Documentos ao seu serviço",
+    "ctaPrimario": "Cadastre-se e teste",
+    "ctaSecundario": "Ver como funciona"
   },
-  "nosotros": {
-    "eyebrow": "Quem somos",
-    "marca": "Server LM",
-    "subtitulo": "Server de serviço, LM de conversação inteligente",
-    "lema": "Inovação & Experiência",
-    "descripcion": "Temos mais de 40 anos de experiência transformando nosso valor e navegando com sucesso pelas ondas tecnológicas."
+  "insights": {
+    "titulo": "A informação já estava lá. O Server LM a encontra.",
+    "subtitulo": "Busca semântica vetorial para entender significado, e busca relacional para consultas e tarefas de precisão.",
+    "card1Stat": "100%",
+    "card1Desc": "Privacidade. Seus arquivos físicos nunca saem da sua rede interna — apenas o texto processado é sincronizado com o chat.",
+    "card2Stat": "5",
+    "card2Desc": "Idiomas: espanhol, inglês, português, francês e alemão. Pensado para equipes internacionais.",
+    "card3Stat": "∞",
+    "card3Desc": "Multi-organização: cada filial com sua própria configuração, branding e dados completamente isolados."
   },
-  "pricing": {
+  "textFill": "Faça perguntas sobre seus contratos, relatórios e procedimentos. Obtenha respostas com citações verificáveis. Defina as regras em linguagem natural — sem programadores, sem que seus dados saiam.",
+  "problema": {
+    "eyebrow": "O problema",
+    "titulo1": "A informação já está lá.",
+    "tituloAccent": "O difícil é encontrá-la.",
+    "descripcion": "As equipes acumulam milhares de contratos, relatórios, atas, regulamentos, procedimentos e e-mails. O problema não é a falta de informação — é que ela está dispersa e difícil de usar.",
+    "sinTitulo": "Sem o Server LM",
+    "conTitulo": "Com o Server LM",
+    "sin0": "Pesquisar pastas por nome de arquivo",
+    "sin1": "Abrir documentos um a um para ler o conteúdo",
+    "sin2": "Copiar e colar texto manualmente para comparar",
+    "sin3": "Informação que \"sabe-se que existe mas não se encontra\"",
+    "sin4": "Risco de documentos confidenciais chegarem a quem não devem",
+    "con0": "Pergunte em linguagem natural e obtenha resposta em segundos",
+    "con1": "Busca semântica que conecta documentos relacionados",
+    "con2": "Comparações, resumos e análises em uma única mensagem",
+    "con3": "O sistema lê e conecta todas as informações automaticamente",
+    "con4": "Controle estrito de permissões: cada usuário vê apenas o que é seu"
+  },
+  "capacidades": {
+    "eyebrow": "Capacidades",
+    "titulo1": "Não é um buscador de arquivos. É um assistente que",
+    "tituloAccent": "compreende",
+    "titulo2": ".",
+    "item0Titulo": "Consultar",
+    "item0Desc": "Resume documentos, responde perguntas específicas, cita textos exatos, compara contratos, extrai cláusulas-chave.",
+    "item1Titulo": "Analisar",
+    "item1Desc": "Extrai entidades, prazos e riscos. Detecta contradições, constrói linhas do tempo e identifica termos técnicos.",
+    "item2Titulo": "Produzir",
+    "item2Desc": "Gera rascunhos de e-mails, atas, relatórios, checklists, tabelas comparativas e respostas formais.",
+    "item3Titulo": "Decidir",
+    "item3Desc": "Apoia a tomada de decisões com análise de conformidade, prós e contras e identifica informações faltantes.",
+    "item4Titulo": "Organizar",
+    "item4Desc": "Cria espaços de trabalho temáticos, agrupa documentos por conceito e sugere etiquetas e classificações automáticas."
+  },
+  "comoFunciona": {
+    "eyebrow": "Como funciona",
+    "titulo": "Quatro passos. Sem tecnicismos.",
+    "subtitulo": "Busca semântica vetorial — IA que entende o significado dos seus documentos, não apenas suas palavras.",
+    "paso0N": "01",
+    "paso0Titulo": "Faça upload dos seus documentos",
+    "paso0Desc": "Carregue PDFs, Word, Excel ou texto. O Server LM os lê e processa automaticamente.",
+    "paso1N": "02",
+    "paso1Titulo": "A IA indexa o conhecimento",
+    "paso1Desc": "Extrai o texto, divide em fragmentos e cria uma base semântica. Cada fragmento fica pronto para ser encontrado por conceito.",
+    "paso2N": "03",
+    "paso2Titulo": "Faça sua pergunta",
+    "paso2Desc": "Escreva em linguagem normal. \"Me dê os contratos vigentes\" ou \"Resuma os relatórios de janeiro\".",
+    "paso3N": "04",
+    "paso3Titulo": "Obtenha a resposta",
+    "paso3Desc": "Busca semântica em todos os seus documentos e resposta precisa, citando os arquivos fonte."
+  },
+  "diferenciadores": {
+    "eyebrow": "Diferenciais",
+    "titulo": "O que nos torna diferentes.",
+    "item0Titulo": "Privacidade total",
+    "item0Desc": "Arquitetura híbrida: o processamento pesado ocorre em um servidor local dentro da sua empresa. Os arquivos físicos nunca saem da sua rede interna.",
+    "item1Titulo": "Multi-organização",
+    "item1Desc": "Uma corporação com filiais, um município com corporações de saúde e educação: cada entidade com sua própria configuração, imagem e usuários. Dados completamente isolados.",
+    "item2Titulo": "Branding próprio",
+    "item2Desc": "A plataforma adapta cores, logotipo e nome para cada cliente. Seus usuários verão uma ferramenta com a identidade visual da sua empresa.",
+    "item3Titulo": "Permissões granulares",
+    "item3Desc": "Os administradores definem quais módulos, documentos e funcionalidades cada papel vê. O menu de cada pessoa é construído dinamicamente.",
+    "item4Titulo": "Multilíngue",
+    "item4Desc": "Interface em espanhol, inglês, português, francês e alemão. Pensada para equipes internacionais e corporações com presença em múltiplos países.",
+    "item5Titulo": "Configurável em linguagem natural",
+    "item5Desc": "As regras de negócio e o comportamento do assistente são definidos em texto simples. Sem programadores."
+  },
+  "modulos": {
+    "eyebrow": "Módulos",
+    "titulo": "Capacidades modulares. Habilite o que você precisa.",
+    "item0Key": "DOCS",
+    "item0Titulo": "Gestor documental com IA",
+    "item0Desc": "Faça upload, organize, processe e consulte documentos. Pipeline automático de escaneamento, chunking e vetorização com chat inteligente sobre seus arquivos.",
+    "item1Key": "CHAT",
+    "item1Titulo": "Assistente conversacional",
+    "item1Desc": "Interface de chat com respostas em tempo real (streaming). Contexto multi-turno com histórico sobre documentos, dados e funcionalidades do sistema.",
+    "item2Key": "MENS",
+    "item2Titulo": "Mensagens e notificações",
+    "item2Desc": "Comunicação com usuários por múltiplos canais: in-app, e-mail, SMS, WhatsApp e Telegram. Templates configuráveis e gatilhos automáticos.",
+    "item3Key": "ADMIN",
+    "item3Titulo": "Painel de administração",
+    "item3Desc": "Gestão de grupos, entidades, usuários, papéis e permissões. Configuração visual (cores, logo, nome) e auditoria completa de operações."
+  },
+  "seguridad": {
+    "eyebrow": "Segurança e privacidade",
+    "titulo1": "Seus dados são seus.",
+    "tituloAccent": "Sempre.",
+    "descripcion": "O Server LM foi projetado desde o início com a premissa de que documentos confidenciais devem permanecer sob o controle da sua organização.",
+    "punto0": "Dados criptografados em repouso no banco de dados (AES-256)",
+    "punto1": "Operação interna apenas via APIs: sem possibilidade de injeção de prompts maliciosos",
+    "punto2": "Autenticação com dois fatores e tokens JWT seguros",
+    "punto3": "Controle de acesso baseado em funções (RBAC) com permissões granulares",
+    "punto4": "Isolamento total entre organizações",
+    "punto5": "Auditoria completa: cada ação registrada com usuário, data e módulo",
+    "punto6": "Comunicações cifradas (HTTPS) em todas as camadas",
+    "punto7": "Processamento local opcional (planos Enterprise/Corp): os documentos físicos nunca saem da sua rede"
+  },
+  "planes": {
     "eyebrow": "Planos",
-    "titulo": "O plano de que você precisa",
-    "masPopular": "Mais popular",
-    "tokensSufijo": "tokens / mês",
-    "personal": {
-      "nombre": "Personal",
-      "desc": "Para profissionais independentes.",
-      "tokens": "1M tokens / mês",
-      "docs": "5.000 documentos",
-      "f1": "Conversa com seus documentos",
-      "f2": "Focos em linguagem natural",
-      "cta": "Testar grátis"
-    },
-    "team": {
-      "nombre": "Team",
-      "desc": "Para equipes e departamentos que colaboram.",
-      "tokens": "120M tokens / mês",
-      "docs": "50.000 documentos",
-      "f1": "Tudo do Personal",
-      "f2": "Acesso por área",
-      "cta": "Contato"
-    },
-    "enterprise": {
-      "nombre": "Enterprise",
-      "desc": "Para empresas com controle avançado.",
-      "tokens": "10M tokens base + extras",
-      "docs": "500.000 documentos",
-      "f1": "Tudo do Team",
-      "f2": "Controle por área e cargo",
-      "f3": "Servidor cliente local",
-      "f4": "Personalização",
-      "f5": "Escolha de LLMs",
-      "cta": "Contato"
-    },
-    "corp": {
-      "nombre": "Corp",
-      "desc": "Para corporações e holdings.",
-      "tokens": "20M tokens base + extras",
-      "docs": "1.000.000+ documentos",
-      "f1": "Tudo do Enterprise",
-      "f2": "Multi-entidade (Holdings)",
-      "f3": "Storage próprio",
-      "cta": "Contato"
-    }
+    "titulo": "Um plano para cada tamanho de organização.",
+    "recomendado": "Recomendado",
+    "plan0Nombre": "Personal",
+    "plan0Sub": "Para profissionais independentes",
+    "plan0Precio": "Comece grátis",
+    "plan0Cta": "Testar 15 dias",
+    "plan0F0": "Chat ilimitado com seus documentos",
+    "plan0F1": "Busca semântica vetorial",
+    "plan0F2": "Processamento PDF, Word, Excel",
+    "plan0F3": "Histórico de conversas",
+    "plan1Nombre": "Team",
+    "plan1Sub": "Para equipes colaborativas",
+    "plan1Precio": "Contato",
+    "plan1Cta": "Falar com vendas",
+    "plan1F0": "Tudo do plano Personal",
+    "plan1F1": "Controle de acesso por área ou cargo",
+    "plan1F2": "Cada membro vê apenas sua área",
+    "plan1F3": "Administrador da equipe",
+    "plan1F4": "Auditoria de acessos",
+    "plan2Nombre": "Enterprise",
+    "plan2Sub": "Controle estrito e privacidade",
+    "plan2Precio": "Contato",
+    "plan2Cta": "Cadastre-se e teste",
+    "plan2F0": "Tudo do plano Team",
+    "plan2F1": "Servidor local: docs nunca saem",
+    "plan2F2": "Escolha de IA: Claude, GPT-4, Gemini",
+    "plan2F3": "Permissões granulares por papel",
+    "plan2F4": "Branding próprio",
+    "plan2F5": "API de integração",
+    "plan2F6": "Suporte prioritário",
+    "plan3Nombre": "Corp",
+    "plan3Sub": "Corporações e holdings",
+    "plan3Precio": "Contato",
+    "plan3Cta": "Falar com vendas",
+    "plan3F0": "Tudo do plano Enterprise",
+    "plan3F1": "Multi-entidade para holdings",
+    "plan3F2": "Administração centralizada",
+    "plan3F3": "Armazenamento próprio (BYO)",
+    "plan3F4": "Suporte dedicado e SLA"
   },
-  "registro": {
+  "porQueNosotros": {
+    "eyebrow": "Por que o Server LM?",
+    "titulo": "Cinco razões para nos escolher.",
+    "item0Titulo": "Ferramenta para crescer",
+    "item0Desc": "Para profissionais, equipes, empresas e organizações com realidades complexas: múltiplas entidades, níveis hierárquicos, requisitos de privacidade e normas locais.",
+    "item1Titulo": "Sem dependência de fornecedor",
+    "item1Desc": "Compatível com Claude (Anthropic), GPT-4 (OpenAI), Gemini (Google) e modelos open source. Você não fica preso a um único fornecedor.",
+    "item2Titulo": "Implementação rápida",
+    "item2Desc": "SaaS pronto para usar. Você só precisa fazer upload de documentos e configurar usuários — sem infraestrutura própria nos planos Personal, Team e Enterprise.",
+    "item3Titulo": "Escala com sua organização",
+    "item3Desc": "De um profissional independente a uma corporação com dezenas de entidades. O mesmo sistema acompanha o crescimento.",
+    "item4Titulo": "Suporte próximo",
+    "item4Desc": "Equipe de desenvolvimento local disponível para adaptar a plataforma às suas necessidades e resolver integrações com sistemas existentes."
+  },
+  "cta": {
     "eyebrow": "Comece hoje",
-    "titulo": "15 dias grátis",
-    "subtitulo": "Sem compromisso. Cancele quando quiser.",
-    "email": "voce@email.com",
-    "password": "Senha",
-    "cta": "Criar conta grátis",
-    "legal": "Ao se registrar, você aceita nossos termos de uso. Será solicitada uma forma de pagamento para ativar o plano e nada será cobrado durante o período de teste. Só será cobrado (e avisado) se você entrar no sistema após o término do período de teste."
+    "titulo": "Tem interesse no Server LM para seu trabalho, equipe ou empresa?",
+    "subtitulo": "Entre em contato para uma demonstração gratuita sem compromisso. 15 dias grátis, sem método de pagamento.",
+    "ctaPrimario": "Cadastre-se e teste",
+    "ctaSecundario": "Falar com vendas"
   },
   "footer": {
-    "copyright": "© {year} Server LM — Agencia AAS. Todos os direitos reservados."
+    "tagline": "Documentos ao seu serviço. Plataforma inteligente de gestão documental.",
+    "produto": "Produto",
+    "empresa": "Empresa",
+    "legal": "Legal",
+    "capacidades": "Capacidades",
+    "comoFunciona": "Como funciona",
+    "planesLink": "Planos",
+    "seguridadLink": "Segurança",
+    "contacto": "Contato",
+    "terminos": "Termos",
+    "privacidad": "Privacidade",
+    "copyright": "© {year} Server LM — Todos os direitos reservados.",
+    "sitio": "serverlm.ai"
   },
   "selector": {
     "label": "Idioma"

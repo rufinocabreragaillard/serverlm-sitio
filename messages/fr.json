@@ -1,98 +1,209 @@
 {
   "metadata": {
     "title": "Server LM — Des documents à votre service",
-    "description": "Comme NotebookLM, mais pour vous et toute votre organisation. Server LM connecte chaque personne aux documents dont elle a besoin — et uniquement à ceux-là."
+    "description": "Interrogez. Analysez. Décidez. Sur vos propres documents. Des réponses précises, avec citations — sans que vos fichiers quittent votre réseau."
   },
   "nav": {
     "producto": "Produit",
-    "nosotros": "À propos",
+    "capacidades": "Capacités",
+    "comoFunciona": "Fonctionnement",
+    "seguridad": "Sécurité",
     "planes": "Plans",
-    "probarGratis": "Essai gratuit"
+    "iniciarSesion": "Se connecter",
+    "cta": "S'inscrire et tester"
   },
   "hero": {
-    "eyebrow": "Comme NotebookLM, mais pour vous et toute votre organisation",
-    "titulo": "Des documents à votre service",
-    "descripcion": "Server LM connecte chaque personne à ses propres données, ou aux données de son entreprise, avec les documents dont elle a besoin — et uniquement avec ceux-là. Comme discuter avec NotebookLM, mais avec tous vos documents. Un comptable parle avec ses factures. Un avocat avec ses contrats. Un manager avec ses rapports. Chacun voit ce qui le concerne, sans filtres manuels ni configurations complexes.",
-    "cta": "Essai gratuit — 15 jours",
-    "bullets": {
-      "conversacion": {
-        "titulo": "Conversation naturelle",
-        "desc": "Posez vos questions en langage naturel, obtenez des réponses depuis vos documents."
-      },
-      "acceso": {
-        "titulo": "Accès contrôlé",
-        "desc": "Chaque utilisateur ne voit que ce que son poste et son secteur permettent. Sans configurations manuelles."
-      },
-      "escala": {
-        "titulo": "Toutes les tailles",
-        "desc": "D'un professionnel indépendant à une grande entreprise avec des millions de documents."
-      }
-    }
+    "headlineLead": "Interrogez. Analysez. Décidez.",
+    "headlineAccent": "Sur vos propres documents.",
+    "subtitle": "Des documents à votre service",
+    "ctaPrimario": "S'inscrire et tester",
+    "ctaSecundario": "Voir comment ça fonctionne"
   },
-  "nosotros": {
-    "eyebrow": "Qui sommes-nous",
-    "marca": "Server LM",
-    "subtitulo": "Server pour le service, LM pour la conversation intelligente",
-    "lema": "Innovation & Expérience",
-    "descripcion": "Plus de 40 ans d'expérience à transformer notre valeur et à naviguer avec succès sur les vagues technologiques."
+  "insights": {
+    "titulo": "L'information était déjà là. Server LM la trouve.",
+    "subtitulo": "Recherche sémantique vectorielle pour comprendre le sens, et recherche relationnelle pour les requêtes et tâches de précision.",
+    "card1Stat": "100%",
+    "card1Desc": "Confidentialité. Vos fichiers physiques ne quittent jamais votre réseau interne — seul le texte traité est synchronisé avec le chat.",
+    "card2Stat": "5",
+    "card2Desc": "Langues : espagnol, anglais, portugais, français et allemand. Conçu pour les équipes internationales.",
+    "card3Stat": "∞",
+    "card3Desc": "Multi-organisation : chaque filiale avec sa propre configuration, son branding et ses données complètement isolées."
   },
-  "pricing": {
+  "textFill": "Posez des questions sur vos contrats, rapports et procédures. Obtenez des réponses avec des citations vérifiables. Définissez les règles en langage naturel — sans développeurs, sans que vos données sortent.",
+  "problema": {
+    "eyebrow": "Le problème",
+    "titulo1": "L'information est déjà là.",
+    "tituloAccent": "La trouver est le plus difficile.",
+    "descripcion": "Les équipes accumulent des milliers de contrats, rapports, comptes rendus, règlements, procédures et e-mails. Le problème n'est pas le manque d'information — c'est qu'elle est dispersée et difficile à utiliser.",
+    "sinTitulo": "Sans Server LM",
+    "conTitulo": "Avec Server LM",
+    "sin0": "Rechercher dans les dossiers par nom de fichier",
+    "sin1": "Ouvrir les documents un par un pour lire le contenu",
+    "sin2": "Copier-coller manuellement du texte pour comparer",
+    "sin3": "Informations \"connues pour exister mais introuvables\"",
+    "sin4": "Risque que des documents confidentiels parviennent à des personnes non autorisées",
+    "con0": "Posez votre question en langage naturel et obtenez une réponse en secondes",
+    "con1": "Recherche sémantique qui connecte les documents liés",
+    "con2": "Comparaisons, résumés et analyses en un seul message",
+    "con3": "Le système lit et connecte automatiquement toutes les informations",
+    "con4": "Contrôle strict des permissions : chaque utilisateur ne voit que ce qui lui appartient"
+  },
+  "capacidades": {
+    "eyebrow": "Capacités",
+    "titulo1": "Ce n'est pas un moteur de recherche de fichiers. C'est un assistant qui",
+    "tituloAccent": "comprend",
+    "titulo2": ".",
+    "item0Titulo": "Consulter",
+    "item0Desc": "Résume les documents, répond à des questions spécifiques, cite des textes exacts, compare des contrats, extrait les clauses clés.",
+    "item1Titulo": "Analyser",
+    "item1Desc": "Extrait des entités, des délais et des risques. Détecte les contradictions, construit des chronologies et identifie les termes techniques.",
+    "item2Titulo": "Produire",
+    "item2Desc": "Génère des brouillons d'e-mails, des comptes rendus, des rapports, des checklists, des tableaux comparatifs et des réponses formelles.",
+    "item3Titulo": "Décider",
+    "item3Desc": "Soutient la prise de décision avec des analyses de conformité, des pour et contre, et identifie les informations manquantes.",
+    "item4Titulo": "Organiser",
+    "item4Desc": "Crée des espaces de travail thématiques, regroupe les documents par concept et suggère des étiquettes et classifications automatiques."
+  },
+  "comoFunciona": {
+    "eyebrow": "Fonctionnement",
+    "titulo": "Quatre étapes. Sans jargon.",
+    "subtitulo": "Recherche sémantique vectorielle — IA qui comprend le sens de vos documents, pas seulement leurs mots.",
+    "paso0N": "01",
+    "paso0Titulo": "Téléchargez vos documents",
+    "paso0Desc": "Chargez des PDF, Word, Excel ou du texte. Server LM les lit et les traite automatiquement.",
+    "paso1N": "02",
+    "paso1Titulo": "L'IA indexe les connaissances",
+    "paso1Desc": "Elle extrait le texte, le divise en fragments et crée une base sémantique. Chaque fragment est prêt à être trouvé par concept.",
+    "paso2N": "03",
+    "paso2Titulo": "Posez votre question",
+    "paso2Desc": "Écrivez en langage naturel. \"Donnez-moi les contrats en cours\" ou \"Résumez les rapports de janvier\".",
+    "paso3N": "04",
+    "paso3Titulo": "Obtenez la réponse",
+    "paso3Desc": "Recherche sémantique dans tous vos documents et réponse précise, avec citation des fichiers sources."
+  },
+  "diferenciadores": {
+    "eyebrow": "Différenciateurs",
+    "titulo": "Ce qui nous rend différents.",
+    "item0Titulo": "Confidentialité totale",
+    "item0Desc": "Architecture hybride : le traitement lourd s'effectue sur un serveur local à l'intérieur de votre entreprise. Les fichiers physiques ne quittent jamais votre réseau interne.",
+    "item1Titulo": "Multi-organisation",
+    "item1Desc": "Une corporation avec des filiales, une municipalité avec des corporations de santé et d'éducation : chaque entité avec sa propre configuration, image et utilisateurs. Données complètement isolées.",
+    "item2Titulo": "Branding propre",
+    "item2Desc": "La plateforme adapte les couleurs, le logo et le nom pour chaque client. Vos utilisateurs verront un outil avec l'identité visuelle de votre entreprise.",
+    "item3Titulo": "Permissions granulaires",
+    "item3Desc": "Les administrateurs définissent quels modules, documents et fonctionnalités chaque rôle voit. Le menu de chaque personne est construit dynamiquement.",
+    "item4Titulo": "Multilingue",
+    "item4Desc": "Interface en espagnol, anglais, portugais, français et allemand. Conçue pour les équipes internationales et les corporations présentes dans plusieurs pays.",
+    "item5Titulo": "Configurable en langage naturel",
+    "item5Desc": "Les règles métier et le comportement de l'assistant sont définis en texte simple. Sans développeurs."
+  },
+  "modulos": {
+    "eyebrow": "Modules",
+    "titulo": "Capacités modulaires. Activez ce dont vous avez besoin.",
+    "item0Key": "DOCS",
+    "item0Titulo": "Gestionnaire documentaire avec IA",
+    "item0Desc": "Téléchargez, organisez, traitez et consultez des documents. Pipeline automatique de numérisation, découpage et vectorisation avec chat intelligent sur vos fichiers.",
+    "item1Key": "CHAT",
+    "item1Titulo": "Assistant conversationnel",
+    "item1Desc": "Interface de chat avec réponses en temps réel (streaming). Contexte multi-tours avec historique sur les documents, données et fonctionnalités du système.",
+    "item2Key": "MSG",
+    "item2Titulo": "Messagerie et notifications",
+    "item2Desc": "Communication avec les utilisateurs via plusieurs canaux : in-app, e-mail, SMS, WhatsApp et Telegram. Modèles configurables et déclencheurs automatiques.",
+    "item3Key": "ADMIN",
+    "item3Titulo": "Panneau d'administration",
+    "item3Desc": "Gestion des groupes, entités, utilisateurs, rôles et permissions. Configuration visuelle (couleurs, logo, nom) et audit complet des opérations."
+  },
+  "seguridad": {
+    "eyebrow": "Sécurité et confidentialité",
+    "titulo1": "Vos données vous appartiennent.",
+    "tituloAccent": "Toujours.",
+    "descripcion": "Server LM a été conçu dès le départ sur la prémisse que les documents confidentiels doivent rester sous le contrôle de votre organisation.",
+    "punto0": "Données chiffrées au repos dans la base de données (AES-256)",
+    "punto1": "Fonctionnement interne uniquement via APIs : aucune possibilité d'injection de prompts malveillants",
+    "punto2": "Authentification à deux facteurs et tokens JWT sécurisés",
+    "punto3": "Contrôle d'accès basé sur les rôles (RBAC) avec permissions granulaires",
+    "punto4": "Isolation totale entre les organisations",
+    "punto5": "Audit complet : chaque action enregistrée avec l'utilisateur, la date et le module",
+    "punto6": "Communications chiffrées (HTTPS) à toutes les couches",
+    "punto7": "Traitement local optionnel (plans Enterprise/Corp) : les documents physiques ne quittent jamais votre réseau"
+  },
+  "planes": {
     "eyebrow": "Plans",
-    "titulo": "Le plan qu'il vous faut",
-    "masPopular": "Le plus populaire",
-    "tokensSufijo": "tokens / mois",
-    "personal": {
-      "nombre": "Personal",
-      "desc": "Pour les professionnels indépendants.",
-      "tokens": "1M tokens / mois",
-      "docs": "5 000 documents",
-      "f1": "Conversation avec vos documents",
-      "f2": "Focus en langage naturel",
-      "cta": "Essai gratuit"
-    },
-    "team": {
-      "nombre": "Team",
-      "desc": "Pour les équipes et services qui collaborent.",
-      "tokens": "120M tokens / mois",
-      "docs": "50 000 documents",
-      "f1": "Tout Personal",
-      "f2": "Accès par secteur",
-      "cta": "Nous contacter"
-    },
-    "enterprise": {
-      "nombre": "Enterprise",
-      "desc": "Pour les entreprises avec un contrôle avancé.",
-      "tokens": "10M tokens de base + extras",
-      "docs": "500 000 documents",
-      "f1": "Tout Team",
-      "f2": "Contrôle par secteur et poste",
-      "f3": "Serveur client local",
-      "f4": "Personnalisation",
-      "f5": "Choix des LLM",
-      "cta": "Nous contacter"
-    },
-    "corp": {
-      "nombre": "Corp",
-      "desc": "Pour les groupes et holdings.",
-      "tokens": "20M tokens de base + extras",
-      "docs": "1 000 000+ documents",
-      "f1": "Tout Enterprise",
-      "f2": "Multi-entité (Holdings)",
-      "f3": "Stockage propre",
-      "cta": "Nous contacter"
-    }
+    "titulo": "Un plan pour chaque taille d'organisation.",
+    "recomendado": "Recommandé",
+    "plan0Nombre": "Personal",
+    "plan0Sub": "Pour les professionnels indépendants",
+    "plan0Precio": "Commencez gratuitement",
+    "plan0Cta": "Essayer 15 jours",
+    "plan0F0": "Chat illimité avec vos documents",
+    "plan0F1": "Recherche sémantique vectorielle",
+    "plan0F2": "Traitement PDF, Word, Excel",
+    "plan0F3": "Historique des conversations",
+    "plan1Nombre": "Team",
+    "plan1Sub": "Pour les équipes collaboratives",
+    "plan1Precio": "Nous contacter",
+    "plan1Cta": "Parler aux ventes",
+    "plan1F0": "Tout du plan Personal",
+    "plan1F1": "Contrôle d'accès par secteur ou rôle",
+    "plan1F2": "Chaque membre ne voit que son secteur",
+    "plan1F3": "Administrateur d'équipe",
+    "plan1F4": "Audit des accès",
+    "plan2Nombre": "Enterprise",
+    "plan2Sub": "Contrôle strict et confidentialité",
+    "plan2Precio": "Nous contacter",
+    "plan2Cta": "S'inscrire et tester",
+    "plan2F0": "Tout du plan Team",
+    "plan2F1": "Serveur local : les docs ne sortent jamais",
+    "plan2F2": "Choix de l'IA : Claude, GPT-4, Gemini",
+    "plan2F3": "Permissions granulaires par rôle",
+    "plan2F4": "Branding propre",
+    "plan2F5": "API d'intégration",
+    "plan2F6": "Support prioritaire",
+    "plan3Nombre": "Corp",
+    "plan3Sub": "Corporations et holdings",
+    "plan3Precio": "Nous contacter",
+    "plan3Cta": "Parler aux ventes",
+    "plan3F0": "Tout du plan Enterprise",
+    "plan3F1": "Multi-entité pour les holdings",
+    "plan3F2": "Administration centralisée",
+    "plan3F3": "Stockage propre (BYO)",
+    "plan3F4": "Support dédié et SLA"
   },
-  "registro": {
+  "porQueNosotros": {
+    "eyebrow": "Pourquoi Server LM ?",
+    "titulo": "Cinq raisons de nous choisir.",
+    "item0Titulo": "Outil pour grandir",
+    "item0Desc": "Pour les professionnels, équipes, entreprises et organisations avec des réalités complexes : multiples entités, niveaux hiérarchiques, exigences de confidentialité et réglementations locales.",
+    "item1Titulo": "Sans dépendance envers un fournisseur",
+    "item1Desc": "Compatible avec Claude (Anthropic), GPT-4 (OpenAI), Gemini (Google) et les modèles open source. Vous n'êtes pas lié à un seul fournisseur.",
+    "item2Titulo": "Déploiement rapide",
+    "item2Desc": "SaaS prêt à l'emploi. Il suffit de télécharger des documents et de configurer des utilisateurs — sans infrastructure propre pour les plans Personal, Team et Enterprise.",
+    "item3Titulo": "Évolue avec votre organisation",
+    "item3Desc": "D'un professionnel indépendant à une corporation avec des dizaines d'entités. Le même système accompagne la croissance.",
+    "item4Titulo": "Support de proximité",
+    "item4Desc": "Équipe de développement locale disponible pour adapter la plateforme à vos besoins et résoudre les intégrations avec les systèmes existants."
+  },
+  "cta": {
     "eyebrow": "Commencez aujourd'hui",
-    "titulo": "15 jours gratuits",
-    "subtitulo": "Sans engagement. Annulez à tout moment.",
-    "email": "vous@email.com",
-    "password": "Mot de passe",
-    "cta": "Créer un compte gratuit",
-    "legal": "En vous inscrivant, vous acceptez nos conditions d'utilisation. Un moyen de paiement vous sera demandé à l'activation de votre plan et rien ne sera facturé pendant la période d'essai. Vous ne serez facturé (et averti) que si vous entrez dans le système après la fin de la période d'essai."
+    "titulo": "Vous êtes intéressé par Server LM pour votre travail, équipe ou entreprise ?",
+    "subtitulo": "Contactez-nous pour une démonstration gratuite et sans engagement. 15 jours gratuits, sans méthode de paiement.",
+    "ctaPrimario": "S'inscrire et tester",
+    "ctaSecundario": "Parler aux ventes"
   },
   "footer": {
-    "copyright": "© {year} Server LM — Agencia AAS. Tous droits réservés."
+    "tagline": "Des documents à votre service. Plateforme intelligente de gestion documentaire.",
+    "produit": "Produit",
+    "entreprise": "Entreprise",
+    "legal": "Légal",
+    "capacidades": "Capacités",
+    "comoFunciona": "Fonctionnement",
+    "planesLink": "Plans",
+    "seguridadLink": "Sécurité",
+    "contacto": "Contact",
+    "terminos": "Conditions",
+    "privacidad": "Confidentialité",
+    "copyright": "© {year} Server LM — Tous droits réservés.",
+    "sitio": "serverlm.ai"
   },
   "selector": {
     "label": "Langue"

@@ -1,282 +1,827 @@
-import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { SelectorIdioma } from "../components/SelectorIdioma";
+'use client'
 
-export default function Home() {
-  const t = useTranslations();
+import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { useEffect, useRef, useState } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { SelectorIdioma } from '../components/SelectorIdioma'
 
-  const bullets = [
-    {
-      titulo: t("hero.bullets.conversacion.titulo"),
-      desc: t("hero.bullets.conversacion.desc"),
-    },
-    {
-      titulo: t("hero.bullets.acceso.titulo"),
-      desc: t("hero.bullets.acceso.desc"),
-    },
-    {
-      titulo: t("hero.bullets.escala.titulo"),
-      desc: t("hero.bullets.escala.desc"),
-    },
-  ];
+/* ------------------------------------------------------------------ */
+/* BlurIn                                                               */
+/* ------------------------------------------------------------------ */
+function BlurIn({
+  children,
+  as: Tag = 'div',
+  className = '',
+  delay = 0,
+}: {
+  children: React.ReactNode
+  as?: keyof React.JSX.IntrinsicElements
+  className?: string
+  delay?: number
+}) {
+  const ref = useRef<HTMLElement>(null)
+  const inViewHook = useInView(ref as React.RefObject<Element>, { once: true, amount: 0.1 })
+  const [forced, setForced] = useState(false)
 
-  const planes = [
-    {
-      key: "personal",
-      nombre: t("pricing.personal.nombre"),
-      desc: t("pricing.personal.desc"),
-      tokens: t("pricing.personal.tokens"),
-      docs: t("pricing.personal.docs"),
-      features: [t("pricing.personal.f1"), t("pricing.personal.f2")],
-      cta: t("pricing.personal.cta"),
-      ctaHref: "#registro",
-      highlight: false,
-    },
-    {
-      key: "team",
-      nombre: t("pricing.team.nombre"),
-      desc: t("pricing.team.desc"),
-      tokens: t("pricing.team.tokens"),
-      docs: t("pricing.team.docs"),
-      features: [t("pricing.team.f1"), t("pricing.team.f2")],
-      cta: t("pricing.team.cta"),
-      ctaHref: "mailto:rufinocabreragaillard@gmail.com",
-      highlight: false,
-    },
-    {
-      key: "enterprise",
-      nombre: t("pricing.enterprise.nombre"),
-      desc: t("pricing.enterprise.desc"),
-      tokens: t("pricing.enterprise.tokens"),
-      docs: t("pricing.enterprise.docs"),
-      features: [
-        t("pricing.enterprise.f1"),
-        t("pricing.enterprise.f2"),
-        t("pricing.enterprise.f3"),
-        t("pricing.enterprise.f4"),
-        t("pricing.enterprise.f5"),
-      ],
-      cta: t("pricing.enterprise.cta"),
-      ctaHref: "mailto:rufinocabreragaillard@gmail.com",
-      highlight: true,
-    },
-    {
-      key: "corp",
-      nombre: t("pricing.corp.nombre"),
-      desc: t("pricing.corp.desc"),
-      tokens: t("pricing.corp.tokens"),
-      docs: t("pricing.corp.docs"),
-      features: [
-        t("pricing.corp.f1"),
-        t("pricing.corp.f2"),
-        t("pricing.corp.f3"),
-      ],
-      cta: t("pricing.corp.cta"),
-      ctaHref: "mailto:rufinocabreragaillard@gmail.com",
-      highlight: false,
-    },
-  ];
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const r = el.getBoundingClientRect()
+    const wh = window.innerHeight || 800
+    if (r.top < wh && r.bottom > 0) {
+      const t = setTimeout(() => setForced(true), 30)
+      return () => clearTimeout(t)
+    }
+  }, [])
+
+  const inView = inViewHook || forced
+  // @ts-ignore
+  const MotionTag = motion[Tag] || motion.div
+  return (
+    <MotionTag
+      ref={ref}
+      className={className}
+      initial={{ filter: 'blur(20px)', opacity: 0 }}
+      animate={inView ? { filter: 'blur(0px)', opacity: 1 } : { filter: 'blur(20px)', opacity: 0 }}
+      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay }}
+    >
+      {children}
+    </MotionTag>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* HeroBg — tiles de documentos flotantes                              */
+/* ------------------------------------------------------------------ */
+function HeroBg() {
+  const tiles = Array.from({ length: 14 }, (_, i) => ({
+    id: i,
+    left: ((i * 73 + 11) % 100),
+    delay: -(Math.random() * 18).toFixed(2),
+    dur: (14 + Math.random() * 14).toFixed(2),
+    rot: `${(Math.random() * 14 - 7).toFixed(1)}deg`,
+    scale: (0.6 + Math.random() * 0.7).toFixed(2),
+  }))
 
   return (
-    <main className="flex flex-col min-h-full">
+    <div className="hero-canvas">
+      <div className="doc-field">
+        {tiles.map((t) => (
+          <div
+            key={t.id}
+            className="doc-tile"
+            style={{
+              left: `${t.left}%`,
+              bottom: '-20%',
+              animationDelay: `${t.delay}s`,
+              animationDuration: `${t.dur}s`,
+              ['--r' as string]: t.rot,
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
-      {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[var(--gray-light)]">
-        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/isotipo_serverlm.png"
-              alt="Server LM"
-              width={21}
-              height={21}
-              className="h-[1.33rem] w-auto"
-            />
-            <span className="text-[var(--gray-dark)] font-semibold text-base tracking-tight">Server LM</span>
-          </div>
-          <div className="flex items-center gap-6 text-sm text-[var(--gray-mid)]">
-            <a href="#que-hace" className="hover:text-[var(--foreground)] transition-colors">{t("nav.producto")}</a>
-            <a href="#quienes-somos" className="hover:text-[var(--foreground)] transition-colors">{t("nav.nosotros")}</a>
-            <a href="#pricing" className="hover:text-[var(--foreground)] transition-colors">{t("nav.planes")}</a>
-            <SelectorIdioma />
-            <a
-              href="https://app.serverlm.ai"
-              className="bg-[var(--accent)] text-white text-sm px-4 py-2 rounded-md hover:opacity-90 transition-opacity"
-            >
-              {t("nav.probarGratis")}
+/* ------------------------------------------------------------------ */
+/* Header                                                               */
+/* ------------------------------------------------------------------ */
+function Header() {
+  const t = useTranslations()
+  const [open, setOpen] = useState(false)
+  const links = [
+    { l: t('nav.producto'), h: '#producto' },
+    { l: t('nav.capacidades'), h: '#capacidades' },
+    { l: t('nav.comoFunciona'), h: '#como-funciona' },
+    { l: t('nav.seguridad'), h: '#seguridad' },
+    { l: t('nav.planes'), h: '#planes' },
+  ]
+
+  return (
+    <header className="sticky top-0 left-0 right-0 flex justify-between items-center px-6 md:px-12 lg:px-15 py-6 z-20 bg-white/80 backdrop-blur-sm">
+      <div className="flex items-center gap-10">
+        <a href="#" className="flex items-center gap-2.5" aria-label="Server LM">
+          <Image src="/isotipo_serverlm.png" alt="" width={28} height={28} className="h-7 w-auto" />
+          <span className="font-manrope font-semibold text-2xl text-slm-dark tracking-tight">Server LM</span>
+        </a>
+        <nav className="hidden lg:flex items-center gap-8">
+          {links.map((it) => (
+            <a key={it.l} href={it.h} className="text-base text-slm-dark hover:opacity-70 transition-opacity">
+              {it.l}
             </a>
+          ))}
+        </nav>
+      </div>
+
+      <div className="hidden lg:flex items-center gap-4">
+        <SelectorIdioma />
+        <a href="https://app.serverlm.ai" className="text-base font-medium text-slm-dark hover:opacity-70 transition-opacity">
+          {t('nav.iniciarSesion')}
+        </a>
+        <a
+          href="https://app.serverlm.ai"
+          className="bg-slm-dark text-slm-light px-6 py-2.5 rounded-full font-medium text-base hover:opacity-90 transition-opacity"
+        >
+          {t('nav.cta')}
+        </a>
+      </div>
+
+      <button onClick={() => setOpen((o) => !o)} className="lg:hidden text-slm-dark" aria-label="Menu">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={open ? 'x' : 'm'}
+            initial={{ rotate: -90, opacity: 0 }}
+            animate={{ rotate: 0, opacity: 1 }}
+            exit={{ rotate: 90, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {open ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" />
+              </svg>
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="absolute top-24 left-0 right-0 bg-white shadow-lg mx-4 rounded-lg px-6 py-8 z-50 lg:hidden"
+          >
+            <div className="flex flex-col gap-5">
+              {links.map((it, i) => (
+                <motion.a
+                  key={it.l}
+                  href={it.h}
+                  onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="text-lg text-slm-dark"
+                >
+                  {it.l}
+                </motion.a>
+              ))}
+              <div className="border-t border-black/10 my-2" />
+              <SelectorIdioma />
+              <a href="https://app.serverlm.ai" className="font-medium text-base text-slm-dark">
+                {t('nav.iniciarSesion')}
+              </a>
+              <a
+                href="https://app.serverlm.ai"
+                className="bg-slm-dark text-slm-light px-6 py-2.5 rounded-full font-medium text-base text-center"
+              >
+                {t('nav.cta')}
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero                                                                 */
+/* ------------------------------------------------------------------ */
+function Hero() {
+  const t = useTranslations()
+  return (
+    <div className="flex-1 flex flex-col items-center justify-between px-6 md:px-12 pb-12 md:pb-16 relative">
+      <div className="pt-6 md:pt-10 z-10" />
+      <div className="flex-1 flex flex-col items-center justify-center z-10 gap-5">
+        <BlurIn
+          as="h1"
+          className="text-center font-helvetica-neue font-medium leading-[1.05] text-slm-dark max-w-3xl"
+        >
+          <span className="block text-4xl md:text-6xl lg:text-7xl tracking-[-0.03em]">{t('hero.headlineLead')}</span>
+          <span className="block text-4xl md:text-6xl lg:text-7xl tracking-[-0.03em] bg-gradient-to-r from-slm-brand-dark via-slm-brand to-slm-brand-light bg-clip-text text-transparent">
+            {t('hero.headlineAccent')}
+          </span>
+        </BlurIn>
+        <BlurIn delay={0.1} className="text-lg md:text-xl text-slm-gray tracking-[0.01em]">
+          {t('hero.subtitle')}
+        </BlurIn>
+      </div>
+      <div className="z-10 flex flex-col items-center gap-7 max-w-xl text-center">
+        <BlurIn delay={0.3} className="flex flex-col sm:flex-row items-center gap-3">
+          <a
+            href="https://app.serverlm.ai"
+            className="bg-slm-dark text-slm-light px-7 py-3 rounded-full font-medium text-base hover:opacity-90 transition-opacity"
+          >
+            {t('hero.ctaPrimario')}
+          </a>
+          <a
+            href="#producto"
+            className="border border-slm-dark text-slm-dark px-7 py-3 rounded-full font-medium text-base hover:bg-gray-50 transition-colors"
+          >
+            {t('hero.ctaSecundario')}
+          </a>
+        </BlurIn>
+      </div>
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none" />
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* Card visuals (CSS-only)                                              */
+/* ------------------------------------------------------------------ */
+function Card1Visual() {
+  return (
+    <div className="card-visual card1-bg grain">
+      <div className="card1-ring r2" />
+      <div className="card1-ring" />
+      <div className="card1-shield" />
+      <svg className="absolute inset-0" viewBox="0 0 400 400" preserveAspectRatio="none">
+        {Array.from({ length: 8 }, (_, i) => {
+          const a = (i / 8) * Math.PI * 2
+          const cx = 200 + Math.cos(a) * 150
+          const cy = 170 + Math.sin(a) * 150
+          return (
+            <g key={i}>
+              <line x1="200" y1="170" x2={cx} y2={cy} stroke="rgba(30,74,130,0.18)" strokeWidth="1" strokeDasharray="2 4" />
+              <circle cx={cx} cy={cy} r="3.2" fill="#1E4A82" opacity="0.8" />
+            </g>
+          )
+        })}
+      </svg>
+    </div>
+  )
+}
+
+function Card2Visual() {
+  const greetings = ['Hola', 'Hello', 'Olá', 'Bonjour', 'Hallo', 'Hola']
+  return (
+    <div className="card-visual card2-bg grain">
+      <div className="greeting-stack" aria-hidden="true">
+        <ul>
+          {greetings.map((g, i) => <li key={i}>{g}</li>)}
+        </ul>
+      </div>
+      <div className="flag-dots" aria-hidden="true">
+        <span className="on" /><span /><span /><span /><span />
+      </div>
+    </div>
+  )
+}
+
+function Card3Visual() {
+  return (
+    <div className="card-visual card3-bg grain">
+      <div className="org-grid" aria-hidden="true">
+        {[1, 2, 3].map((i) => (
+          <div key={i} className={`org-card c${i}`}>
+            <span className="accent" />
+            <span className="ln a" /><span className="ln b" /><span className="ln c" />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* InsightsSection                                                      */
+/* ------------------------------------------------------------------ */
+function InsightsSection() {
+  const t = useTranslations()
+  const cards = [
+    { visual: <Card1Visual />, overlay: 'rgba(206,223,235,0.25)', stat: t('insights.card1Stat'), desc: t('insights.card1Desc'), minH: 'min-h-[450px]' },
+    { visual: <Card2Visual />, overlay: 'rgba(247,236,233,0.6)', stat: t('insights.card2Stat'), desc: t('insights.card2Desc'), minH: 'min-h-[350px]' },
+    { visual: <Card3Visual />, overlay: 'rgba(218,218,218,0.2)', stat: t('insights.card3Stat'), desc: t('insights.card3Desc'), minH: 'min-h-[450px]' },
+  ]
+  return (
+    <section className="px-6 md:px-12 lg:px-[60px] py-20 bg-white flex flex-col gap-[90px]">
+      <div className="max-w-[517px] flex flex-col gap-10">
+        <BlurIn as="h2" className="text-slm-dark text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1] lg:leading-[60px] tracking-[-0.03em]">
+          {t('insights.titulo')}
+        </BlurIn>
+        <BlurIn as="p" className="text-slm-gray text-base md:text-lg lg:text-xl font-helvetica-neue max-w-[420px] leading-snug">
+          {t('insights.subtitulo')}
+        </BlurIn>
+      </div>
+      <motion.div
+        className="flex flex-col lg:flex-row items-stretch lg:items-end gap-5"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.2 } } }}
+      >
+        {cards.map((c, i) => (
+          <motion.div
+            key={i}
+            className={`flex-1 p-10 rounded-[40px] relative overflow-hidden flex flex-col justify-end ${c.minH}`}
+            variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } }}
+          >
+            {c.visual}
+            <div className="absolute inset-0" style={{ background: c.overlay }} />
+            <div className="relative z-10 flex flex-col gap-5">
+              <span className="text-5xl md:text-[60px] font-helvetica-neue font-medium leading-[1] text-slm-dark">{c.stat}</span>
+              <p className="text-lg md:text-[22px] font-helvetica-neue opacity-80 text-slm-gray leading-snug max-w-[377px]">{c.desc}</p>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* ProblemSolutionSection                                               */
+/* ------------------------------------------------------------------ */
+function ProblemSolutionSection() {
+  const t = useTranslations()
+  const sin = [0, 1, 2, 3, 4].map((i) => t(`problema.sin${i}` as Parameters<typeof t>[0]))
+  const con = [0, 1, 2, 3, 4].map((i) => t(`problema.con${i}` as Parameters<typeof t>[0]))
+  return (
+    <section id="producto" className="px-6 md:px-12 lg:px-[60px] py-24 md:py-32 bg-slm-dark text-slm-light relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30 pointer-events-none"
+        style={{ background: 'radial-gradient(800px 500px at 80% 20%, rgba(64,137,205,0.35), transparent 60%), radial-gradient(700px 500px at 10% 90%, rgba(122,180,221,0.18), transparent 70%)' }} />
+      <div className="relative max-w-[1200px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[640px] flex flex-col gap-6">
+          <span className="text-sm uppercase tracking-[0.18em] text-slm-brand-light">{t('problema.eyebrow')}</span>
+          <BlurIn as="h2" className="text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1.05] tracking-[-0.03em]">
+            {t('problema.titulo1')} <span className="text-slm-brand-light">{t('problema.tituloAccent')}</span>
+          </BlurIn>
+          <p className="text-base md:text-lg text-slm-gray-light font-helvetica-neue max-w-[520px] leading-relaxed">
+            {t('problema.descripcion')}
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-5">
+          <div className="rounded-[28px] border border-white/10 p-8 md:p-10 bg-white/[0.03] backdrop-blur-sm">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-slm-gray-light text-sm">—</span>
+              <span className="text-sm uppercase tracking-[0.18em] text-slm-gray-light">{t('problema.sinTitulo')}</span>
+            </div>
+            <ul className="flex flex-col gap-4">
+              {sin.map((s, i) => (
+                <li key={i} className="flex gap-3 text-slm-light/80 font-helvetica-neue text-base md:text-lg leading-snug">
+                  <span className="mt-2 inline-block w-1.5 h-1.5 rounded-full bg-slm-gray-light flex-none" />{s}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-[28px] p-8 md:p-10 bg-gradient-to-br from-slm-brand-dark via-slm-brand/30 to-slm-brand-light/10 border border-slm-brand-light/30">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slm-brand-light/20 text-slm-brand-light text-sm">✓</span>
+              <span className="text-sm uppercase tracking-[0.18em] text-slm-brand-light">{t('problema.conTitulo')}</span>
+            </div>
+            <ul className="flex flex-col gap-4">
+              {con.map((s, i) => (
+                <li key={i} className="flex gap-3 text-slm-light font-helvetica-neue text-base md:text-lg leading-snug">
+                  <span className="mt-2 inline-block w-1.5 h-1.5 rounded-full bg-slm-brand-light flex-none" />{s}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </nav>
+      </div>
+    </section>
+  )
+}
 
-      {/* SECCIÓN 1: QUÉ HACE */}
-      <section id="que-hace" className="pt-32 pb-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-            {t("hero.eyebrow")}
-          </p>
-          <h1 className="text-5xl font-bold text-[var(--gray-dark)] leading-tight mb-6">
-            {t("hero.titulo")}
-          </h1>
-          <p className="text-lg text-[var(--gray-mid)] leading-relaxed mb-10">
-            {t("hero.descripcion")}
-          </p>
-          <a
-            href="#registro"
-            className="inline-block bg-[var(--accent)] text-white px-8 py-3 rounded-md text-base font-medium hover:opacity-90 transition-opacity"
-          >
-            {t("hero.cta")}
-          </a>
+/* ------------------------------------------------------------------ */
+/* CapabilitiesSection                                                  */
+/* ------------------------------------------------------------------ */
+function CapabilitiesSection() {
+  const t = useTranslations()
+  const caps = [0, 1, 2, 3, 4].map((i) => ({
+    titulo: t(`capacidades.item${i}Titulo` as Parameters<typeof t>[0]),
+    desc: t(`capacidades.item${i}Desc` as Parameters<typeof t>[0]),
+  }))
+  return (
+    <section id="capacidades" className="px-6 md:px-12 lg:px-[60px] py-24 md:py-32 bg-slm-light">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[680px] flex flex-col gap-6">
+          <span className="text-sm uppercase tracking-[0.18em] text-slm-brand">{t('capacidades.eyebrow')}</span>
+          <BlurIn as="h2" className="text-slm-dark text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1.05] tracking-[-0.03em]">
+            {t('capacidades.titulo1')}{' '}
+            <span className="bg-gradient-to-r from-slm-brand-dark via-slm-brand to-slm-brand-light bg-clip-text text-transparent">
+              {t('capacidades.tituloAccent')}
+            </span>
+            {t('capacidades.titulo2')}
+          </BlurIn>
         </div>
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+          initial="h" whileInView="s" viewport={{ once: true, amount: 0.2 }}
+          variants={{ h: {}, s: { transition: { staggerChildren: 0.08 } } }}
+        >
+          {caps.map((c, i) => (
+            <motion.div
+              key={c.titulo}
+              variants={{ h: { opacity: 0, y: 20 }, s: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } } }}
+              className="rounded-[24px] bg-white p-8 border border-slm-dark/5 hover:border-slm-brand/40 transition-colors flex flex-col gap-4 min-h-[220px]"
+            >
+              <div className="flex items-baseline justify-between">
+                <h3 className="text-2xl md:text-3xl font-helvetica-neue font-medium text-slm-dark tracking-[-0.02em]">{c.titulo}</h3>
+                <span className="text-xs text-slm-gray-light">0{i + 1}</span>
+              </div>
+              <p className="text-slm-gray font-helvetica-neue text-base md:text-[17px] leading-relaxed">{c.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
 
-        {/* Bullets */}
-        <div className="max-w-4xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {bullets.map((item) => (
-            <div key={item.titulo} className="text-left p-6 border border-[var(--gray-light)] rounded-lg">
-              <div className="w-2 h-2 rounded-full bg-[var(--accent)] mb-4" />
-              <h3 className="font-semibold text-[var(--gray-dark)] mb-2">{item.titulo}</h3>
-              <p className="text-sm text-[var(--gray-mid)] leading-relaxed">{item.desc}</p>
+/* ------------------------------------------------------------------ */
+/* HowItWorksSection                                                    */
+/* ------------------------------------------------------------------ */
+function HowItWorksSection() {
+  const t = useTranslations()
+  const steps = [0, 1, 2, 3].map((i) => ({
+    n: t(`comoFunciona.paso${i}N` as Parameters<typeof t>[0]),
+    titulo: t(`comoFunciona.paso${i}Titulo` as Parameters<typeof t>[0]),
+    desc: t(`comoFunciona.paso${i}Desc` as Parameters<typeof t>[0]),
+  }))
+  return (
+    <section id="como-funciona" className="px-6 md:px-12 lg:px-[60px] py-24 md:py-32 bg-white">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <div className="max-w-[640px] flex flex-col gap-6">
+            <span className="text-sm uppercase tracking-[0.18em] text-slm-brand">{t('comoFunciona.eyebrow')}</span>
+            <BlurIn as="h2" className="text-slm-dark text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1.05] tracking-[-0.03em]">
+              {t('comoFunciona.titulo')}
+            </BlurIn>
+          </div>
+          <p className="max-w-[360px] text-slm-gray font-helvetica-neue text-base md:text-lg leading-relaxed">
+            {t('comoFunciona.subtitulo')}
+          </p>
+        </div>
+        <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-slm-dark/8 rounded-[24px] overflow-hidden border border-slm-dark/8">
+          {steps.map((s) => (
+            <li key={s.n} className="bg-white p-8 md:p-10 flex flex-col gap-5 min-h-[260px] relative">
+              <span className="font-helvetica-neue text-5xl md:text-6xl font-medium bg-gradient-to-br from-slm-brand-dark via-slm-brand to-slm-brand-light bg-clip-text text-transparent leading-none">
+                {s.n}
+              </span>
+              <h3 className="font-helvetica-neue text-xl md:text-2xl font-medium text-slm-dark tracking-[-0.02em]">{s.titulo}</h3>
+              <p className="text-slm-gray font-helvetica-neue text-base leading-relaxed">{s.desc}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* DifferentiatorsSection                                               */
+/* ------------------------------------------------------------------ */
+function DifferentiatorsSection() {
+  const t = useTranslations()
+  const items = [0, 1, 2, 3, 4, 5].map((i) => ({
+    titulo: t(`diferenciadores.item${i}Titulo` as Parameters<typeof t>[0]),
+    desc: t(`diferenciadores.item${i}Desc` as Parameters<typeof t>[0]),
+  }))
+  return (
+    <section className="px-6 md:px-12 lg:px-[60px] py-24 md:py-32 bg-slm-light">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[680px] flex flex-col gap-6">
+          <span className="text-sm uppercase tracking-[0.18em] text-slm-brand">{t('diferenciadores.eyebrow')}</span>
+          <BlurIn as="h2" className="text-slm-dark text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1.05] tracking-[-0.03em]">
+            {t('diferenciadores.titulo')}
+          </BlurIn>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {items.map((it, i) => (
+            <div key={it.titulo} className="bg-white rounded-[24px] p-8 flex flex-col gap-4 border border-slm-dark/5">
+              <div className="flex items-center gap-3">
+                <span className="inline-block w-2.5 h-2.5 rounded-sm bg-gradient-to-br from-slm-brand-dark to-slm-brand-light" />
+                <span className="text-xs text-slm-gray-light">{String(i + 1).padStart(2, '0')}</span>
+              </div>
+              <h3 className="font-helvetica-neue text-2xl font-medium text-slm-dark tracking-[-0.02em] leading-tight">{it.titulo}</h3>
+              <p className="text-slm-gray font-helvetica-neue text-base leading-relaxed">{it.desc}</p>
             </div>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
+  )
+}
 
-      <div className="border-t border-[var(--gray-light)]" />
+/* ------------------------------------------------------------------ */
+/* ModulesSection                                                       */
+/* ------------------------------------------------------------------ */
+function ModulesSection() {
+  const t = useTranslations()
+  const mods = [0, 1, 2, 3].map((i) => ({
+    key: t(`modulos.item${i}Key` as Parameters<typeof t>[0]),
+    titulo: t(`modulos.item${i}Titulo` as Parameters<typeof t>[0]),
+    desc: t(`modulos.item${i}Desc` as Parameters<typeof t>[0]),
+  }))
+  return (
+    <section className="px-6 md:px-12 lg:px-[60px] py-24 md:py-32 bg-white">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[680px] flex flex-col gap-6">
+          <span className="text-sm uppercase tracking-[0.18em] text-slm-brand">{t('modulos.eyebrow')}</span>
+          <BlurIn as="h2" className="text-slm-dark text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1.05] tracking-[-0.03em]">
+            {t('modulos.titulo')}
+          </BlurIn>
+        </div>
+        <div className="grid md:grid-cols-2 gap-5">
+          {mods.map((m) => (
+            <div key={m.key} className="rounded-[28px] p-10 border border-slm-dark/8 bg-gradient-to-br from-white to-slm-light/60 flex flex-col gap-5 min-h-[240px]">
+              <div className="flex items-center gap-3">
+                <span className="font-manrope font-bold text-sm tracking-[0.15em] text-slm-brand-dark bg-slm-brand-light/20 px-3 py-1 rounded-full">
+                  {m.key}
+                </span>
+              </div>
+              <h3 className="font-helvetica-neue text-2xl md:text-3xl font-medium text-slm-dark tracking-[-0.02em]">{m.titulo}</h3>
+              <p className="text-slm-gray font-helvetica-neue text-base md:text-[17px] leading-relaxed">{m.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
 
-      {/* SECCIÓN 2: QUIÉNES SOMOS */}
-      <section id="quienes-somos" className="py-24 px-6 bg-[var(--gray-very-light)]">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-            {t("nosotros.eyebrow")}
-          </p>
-          <h2 className="text-3xl font-bold text-[var(--gray-dark)] mb-2">
-            {t("nosotros.marca")}
-          </h2>
-          <p className="text-base font-normal text-[var(--gray-mid)] mb-2">
-            {t("nosotros.subtitulo")}
-          </p>
-          <h3 className="text-2xl font-semibold text-[var(--gray-dark)] mb-6">
-            {t("nosotros.lema")}
-          </h3>
-          <p className="text-lg text-[var(--gray-mid)] leading-relaxed">
-            {t("nosotros.descripcion")}
+/* ------------------------------------------------------------------ */
+/* TextFillSection                                                      */
+/* ------------------------------------------------------------------ */
+function TextFillSection() {
+  const t = useTranslations()
+  const ref = useRef<HTMLElement>(null)
+  const [fill, setFill] = useState(0)
+  const text = t('textFill')
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = ref.current
+      if (!el) return
+      const top = el.getBoundingClientRect().top
+      const wh = window.innerHeight
+      const start = wh * 0.8, end = wh * 0.2
+      let pct = top >= start ? 0 : top <= end ? 100 : ((start - top) / (start - end)) * 100
+      setFill(Math.max(0, Math.min(100, pct)))
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll) }
+  }, [])
+
+  return (
+    <section ref={ref} className="flex justify-center items-center px-6 md:px-16 py-24 md:py-32 bg-white mb-[30vh]">
+      <div className="max-w-2xl w-full text-center relative">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-tight relative tracking-[-0.03em]">
+          <span className="block text-slm-gray-light">{text}</span>
+          <span
+            className="absolute inset-0 bg-gradient-to-r from-slm-brand-dark via-slm-brand to-slm-brand-light bg-clip-text text-transparent"
+            style={{ clipPath: `inset(0 ${100 - fill}% 0 0)`, transition: 'clip-path 0.1s linear' }}
+          >
+            {text}
+          </span>
+        </h2>
+      </div>
+    </section>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* SecuritySection                                                      */
+/* ------------------------------------------------------------------ */
+function SecuritySection() {
+  const t = useTranslations()
+  const puntos = [0, 1, 2, 3, 4, 5, 6, 7].map((i) => t(`seguridad.punto${i}` as Parameters<typeof t>[0]))
+  return (
+    <section id="seguridad" className="px-6 md:px-12 lg:px-[60px] py-24 md:py-32 bg-slm-dark text-slm-light relative overflow-hidden">
+      <div className="absolute inset-0 opacity-40 pointer-events-none"
+        style={{ background: 'radial-gradient(700px 500px at 90% 10%, rgba(64,137,205,0.30), transparent 60%), radial-gradient(600px 400px at 0% 90%, rgba(122,180,221,0.15), transparent 70%)' }} />
+      <div className="relative max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-16 items-start">
+        <div className="flex flex-col gap-8">
+          <span className="text-sm uppercase tracking-[0.18em] text-slm-brand-light">{t('seguridad.eyebrow')}</span>
+          <BlurIn as="h2" className="text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1.05] tracking-[-0.03em]">
+            {t('seguridad.titulo1')} <span className="text-slm-brand-light">{t('seguridad.tituloAccent')}</span>
+          </BlurIn>
+          <p className="text-base md:text-lg text-slm-gray-light font-helvetica-neue max-w-[480px] leading-relaxed">
+            {t('seguridad.descripcion')}
           </p>
         </div>
-      </section>
+        <ul className="flex flex-col gap-px bg-white/10 rounded-[24px] overflow-hidden border border-white/10">
+          {puntos.map((p, i) => (
+            <li key={i} className="bg-slm-dark px-6 py-5 flex gap-4 items-start">
+              <span className="text-xs text-slm-brand-light mt-1 flex-none">{String(i + 1).padStart(2, '0')}</span>
+              <span className="font-helvetica-neue text-base md:text-lg text-slm-light/90 leading-snug">{p}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
 
-      <div className="border-t border-[var(--gray-light)]" />
-
-      {/* SECCIÓN 3: PRICING */}
-      <section id="pricing" className="py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-              {t("pricing.eyebrow")}
-            </p>
-            <h2 className="text-3xl font-bold text-[var(--gray-dark)]">
-              {t("pricing.titulo")}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {planes.map((plan) => (
+/* ------------------------------------------------------------------ */
+/* PricingSection                                                       */
+/* ------------------------------------------------------------------ */
+function PricingSection() {
+  const t = useTranslations()
+  const plans = [
+    { idx: 0, featured: false, featureCount: 4 },
+    { idx: 1, featured: false, featureCount: 5 },
+    { idx: 2, featured: true, featureCount: 7 },
+    { idx: 3, featured: false, featureCount: 5 },
+  ]
+  return (
+    <section id="planes" className="px-6 md:px-12 lg:px-[60px] py-24 md:py-32 bg-slm-light">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[680px] flex flex-col gap-6">
+          <span className="text-sm uppercase tracking-[0.18em] text-slm-brand">{t('planes.eyebrow')}</span>
+          <BlurIn as="h2" className="text-slm-dark text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1.05] tracking-[-0.03em]">
+            {t('planes.titulo')}
+          </BlurIn>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {plans.map(({ idx, featured, featureCount }) => {
+            const nombre = t(`planes.plan${idx}Nombre` as Parameters<typeof t>[0])
+            const sub = t(`planes.plan${idx}Sub` as Parameters<typeof t>[0])
+            const precio = t(`planes.plan${idx}Precio` as Parameters<typeof t>[0])
+            const cta = t(`planes.plan${idx}Cta` as Parameters<typeof t>[0])
+            const feats = Array.from({ length: featureCount }, (_, fi) =>
+              t(`planes.plan${idx}F${fi}` as Parameters<typeof t>[0])
+            )
+            return (
               <div
-                key={plan.key}
-                className={`flex flex-col p-6 rounded-lg border ${
-                  plan.highlight
-                    ? "border-[var(--accent)] bg-[var(--accent-light)]"
-                    : "border-[var(--gray-light)]"
-                }`}
+                key={nombre}
+                className={`rounded-[24px] p-8 flex flex-col gap-6 border ${featured ? 'bg-slm-dark text-slm-light border-slm-brand-dark' : 'bg-white border-slm-dark/8'}`}
               >
-                {plan.highlight && (
-                  <span className="text-xs font-semibold text-[var(--accent)] uppercase tracking-widest mb-2">
-                    {t("pricing.masPopular")}
-                  </span>
-                )}
-                <h3 className="text-xl font-bold text-[var(--gray-dark)] mb-1">{plan.nombre}</h3>
-                <p className="text-sm text-[var(--gray-mid)] mb-4">{plan.desc}</p>
-                <p className="text-xs text-[var(--gray-mid)] mb-1">{plan.tokens}</p>
-                <p className="text-xs text-[var(--gray-mid)] mb-6">{plan.docs}</p>
-                <ul className="flex-1 space-y-2 mb-8">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-[var(--gray-dark)]">
-                      <span className="text-[var(--accent)] mt-0.5">✓</span>
-                      {f}
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center justify-between">
+                    <h3 className={`font-helvetica-neue text-2xl font-medium tracking-[-0.02em] ${featured ? 'text-white' : 'text-slm-dark'}`}>{nombre}</h3>
+                    {featured && <span className="text-[10px] uppercase tracking-[0.15em] bg-slm-brand-light/20 text-slm-brand-light px-2 py-1 rounded-full">{t('planes.recomendado')}</span>}
+                  </div>
+                  <p className={`font-helvetica-neue text-sm ${featured ? 'text-slm-gray-light' : 'text-slm-gray'}`}>{sub}</p>
+                </div>
+                <div className={`font-helvetica-neue text-lg font-medium ${featured ? 'text-white' : 'text-slm-dark'}`}>{precio}</div>
+                <ul className="flex flex-col gap-3 flex-1">
+                  {feats.map((f, i) => (
+                    <li key={i} className={`flex gap-2 text-sm font-helvetica-neue leading-snug ${featured ? 'text-slm-light/90' : 'text-slm-gray'}`}>
+                      <span className={`mt-1.5 inline-block w-1 h-1 rounded-full flex-none ${featured ? 'bg-slm-brand-light' : 'bg-slm-brand'}`} />{f}
                     </li>
                   ))}
                 </ul>
                 <a
-                  href={plan.ctaHref}
-                  className={`text-center py-2 rounded-md text-sm font-medium transition-opacity ${
-                    plan.highlight
-                      ? "bg-[var(--accent)] text-white hover:opacity-90"
-                      : "border border-[var(--gray-light)] text-[var(--gray-dark)] hover:border-[var(--accent)]"
-                  }`}
+                  href="mailto:rufinocabreragaillard@gmail.com"
+                  className={`text-center font-medium text-sm px-5 py-3 rounded-full transition-opacity hover:opacity-90 ${featured ? 'bg-slm-brand-light text-slm-dark' : 'bg-slm-dark text-slm-light'}`}
                 >
-                  {plan.cta}
+                  {cta}
                 </a>
               </div>
-            ))}
-          </div>
+            )
+          })}
         </div>
-      </section>
+      </div>
+    </section>
+  )
+}
 
-      <div className="border-t border-[var(--gray-light)]" />
-
-      {/* SECCIÓN 4: REGISTRO */}
-      <section id="registro" className="py-24 px-6 bg-[var(--gray-very-light)]">
-        <div className="max-w-md mx-auto text-center">
-          <p className="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-4">
-            {t("registro.eyebrow")}
-          </p>
-          <h2 className="text-3xl font-bold text-[var(--gray-dark)] mb-3">
-            {t("registro.titulo")}
-          </h2>
-          <p className="text-[var(--gray-mid)] mb-8">
-            {t("registro.subtitulo")}
-          </p>
-          <form className="flex flex-col gap-4 text-left">
-            <input
-              type="email"
-              placeholder={t("registro.email")}
-              className="w-full px-4 py-3 border border-[var(--gray-light)] rounded-md text-sm focus:outline-none focus:border-[var(--accent)]"
-            />
-            <input
-              type="password"
-              placeholder={t("registro.password")}
-              className="w-full px-4 py-3 border border-[var(--gray-light)] rounded-md text-sm focus:outline-none focus:border-[var(--accent)]"
-            />
-            <a
-              href="mailto:rufinocabreragaillard@gmail.com"
-              className="w-full bg-[var(--accent)] text-white py-3 rounded-md text-sm font-medium hover:opacity-90 transition-opacity text-center block"
+/* ------------------------------------------------------------------ */
+/* WhyUsSection                                                         */
+/* ------------------------------------------------------------------ */
+function WhyUsSection() {
+  const t = useTranslations()
+  const items = [0, 1, 2, 3, 4].map((i) => ({
+    titulo: t(`porQueNosotros.item${i}Titulo` as Parameters<typeof t>[0]),
+    desc: t(`porQueNosotros.item${i}Desc` as Parameters<typeof t>[0]),
+  }))
+  return (
+    <section className="px-6 md:px-12 lg:px-[60px] py-24 md:py-32 bg-white">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
+        <div className="max-w-[680px] flex flex-col gap-6">
+          <span className="text-sm uppercase tracking-[0.18em] text-slm-brand">{t('porQueNosotros.eyebrow')}</span>
+          <BlurIn as="h2" className="text-slm-dark text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1.05] tracking-[-0.03em]">
+            {t('porQueNosotros.titulo')}
+          </BlurIn>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {items.map((r, i) => (
+            <div
+              key={r.titulo}
+              className={`rounded-[24px] p-8 flex flex-col gap-4 ${i === 0 ? 'bg-gradient-to-br from-slm-brand-dark via-slm-brand to-slm-brand-light text-white' : 'bg-slm-light'}`}
             >
-              {t("registro.cta")}
-            </a>
-            <p className="text-xs text-center text-[var(--gray-mid)]">
-              {t("registro.legal")}
-            </p>
-          </form>
+              <span className={`text-xs ${i === 0 ? 'text-white/70' : 'text-slm-gray-light'}`}>{String(i + 1).padStart(2, '0')}</span>
+              <h3 className={`font-helvetica-neue text-2xl font-medium tracking-[-0.02em] leading-tight ${i === 0 ? 'text-white' : 'text-slm-dark'}`}>{r.titulo}</h3>
+              <p className={`font-helvetica-neue text-base leading-relaxed ${i === 0 ? 'text-white/85' : 'text-slm-gray'}`}>{r.desc}</p>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
+  )
+}
 
-      {/* FOOTER */}
-      <footer className="border-t border-[var(--gray-light)] py-8 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 opacity-60">
-            <Image
-              src="/isotipo_serverlm.png"
-              alt="Server LM"
-              width={13}
-              height={13}
-              className="h-[0.83rem] w-auto"
-            />
-            <span className="text-xs font-semibold text-[var(--gray-dark)] tracking-tight">Server LM</span>
-          </div>
-          <p className="text-xs text-[var(--gray-mid)]">
-            {t("footer.copyright", { year: new Date().getFullYear() })}
+/* ------------------------------------------------------------------ */
+/* FinalCTASection                                                      */
+/* ------------------------------------------------------------------ */
+function FinalCTASection() {
+  const t = useTranslations()
+  return (
+    <section id="contacto" className="px-6 md:px-12 lg:px-[60px] py-24 md:py-32 bg-slm-light">
+      <div className="max-w-[1100px] mx-auto rounded-[40px] p-10 md:p-16 lg:p-20 bg-gradient-to-br from-slm-brand-dark via-slm-brand to-slm-brand-light relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 pointer-events-none"
+          style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+        <div className="relative flex flex-col items-start gap-8 max-w-[640px]">
+          <span className="text-sm uppercase tracking-[0.18em] text-white/80">{t('cta.eyebrow')}</span>
+          <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-helvetica-neue font-medium leading-[1.05] tracking-[-0.03em]">
+            {t('cta.titulo')}
+          </h2>
+          <p className="text-white/85 font-helvetica-neue text-base md:text-lg max-w-[480px] leading-relaxed">
+            {t('cta.subtitulo')}
           </p>
+          <div className="flex flex-col sm:flex-row items-start gap-3">
+            <a href="https://app.serverlm.ai" className="bg-white text-slm-dark px-7 py-3.5 rounded-full font-medium text-base hover:opacity-90 transition-opacity">
+              {t('cta.ctaPrimario')}
+            </a>
+            <a href="mailto:rufinocabreragaillard@gmail.com" className="border border-white/40 text-white px-7 py-3.5 rounded-full font-medium text-base hover:bg-white/10 transition-colors">
+              {t('cta.ctaSecundario')}
+            </a>
+          </div>
         </div>
-      </footer>
+      </div>
+    </section>
+  )
+}
 
+/* ------------------------------------------------------------------ */
+/* Footer                                                               */
+/* ------------------------------------------------------------------ */
+function Footer() {
+  const t = useTranslations()
+  const year = new Date().getFullYear()
+  return (
+    <footer className="px-6 md:px-12 lg:px-[60px] py-16 bg-slm-dark text-slm-gray-light">
+      <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-10 md:gap-16 items-start justify-between">
+        <div className="flex flex-col gap-4 max-w-[320px]">
+          <div className="flex items-center gap-2.5 font-manrope font-semibold text-2xl text-white">
+            <Image src="/isotipo_serverlm.png" alt="" width={28} height={28} className="h-7 w-auto brightness-0 invert" style={{ filter: 'brightness(0) invert(1)' }} />
+            Server LM
+          </div>
+          <p className="font-helvetica-neue text-sm leading-relaxed">{t('footer.tagline')}</p>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-10">
+          <div className="flex flex-col gap-3">
+            <span className="text-xs uppercase tracking-[0.18em] text-white/60">{t('footer.producto' as Parameters<typeof t>[0])}</span>
+            <a href="#capacidades" className="font-helvetica-neue text-sm hover:text-white">{t('footer.capacidades')}</a>
+            <a href="#como-funciona" className="font-helvetica-neue text-sm hover:text-white">{t('footer.comoFunciona')}</a>
+            <a href="#planes" className="font-helvetica-neue text-sm hover:text-white">{t('footer.planesLink')}</a>
+          </div>
+          <div className="flex flex-col gap-3">
+            <span className="text-xs uppercase tracking-[0.18em] text-white/60">{t('footer.empresa' as Parameters<typeof t>[0])}</span>
+            <a href="#seguridad" className="font-helvetica-neue text-sm hover:text-white">{t('footer.seguridadLink')}</a>
+            <a href="#contacto" className="font-helvetica-neue text-sm hover:text-white">{t('footer.contacto')}</a>
+          </div>
+          <div className="flex flex-col gap-3">
+            <span className="text-xs uppercase tracking-[0.18em] text-white/60">{t('footer.legal')}</span>
+            <a href="#" className="font-helvetica-neue text-sm hover:text-white">{t('footer.terminos')}</a>
+            <a href="#" className="font-helvetica-neue text-sm hover:text-white">{t('footer.privacidad')}</a>
+          </div>
+        </div>
+      </div>
+      <div className="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs font-helvetica-neue">
+        <span>{t('footer.copyright', { year })}</span>
+        <span>{t('footer.sitio')}</span>
+      </div>
+    </footer>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/* Page                                                                 */
+/* ------------------------------------------------------------------ */
+export default function Home() {
+  return (
+    <main className="flex flex-col min-h-full">
+      <div className="h-screen flex flex-col relative overflow-hidden">
+        <HeroBg />
+        <Header />
+        <Hero />
+      </div>
+      <InsightsSection />
+      <ProblemSolutionSection />
+      <CapabilitiesSection />
+      <HowItWorksSection />
+      <DifferentiatorsSection />
+      <ModulesSection />
+      <TextFillSection />
+      <SecuritySection />
+      <PricingSection />
+      <WhyUsSection />
+      <FinalCTASection />
+      <Footer />
     </main>
-  );
+  )
 }
