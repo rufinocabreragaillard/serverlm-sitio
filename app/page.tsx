@@ -708,16 +708,19 @@ function WhyUsSection() {
           </BlurIn>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {items.map((r, i) => (
-            <div
-              key={r.titulo}
-              className={`rounded-[24px] p-8 flex flex-col gap-4 ${i === 0 ? 'bg-gradient-to-br from-slm-brand-dark via-slm-brand to-slm-brand-light text-white' : 'bg-slm-light'}`}
-            >
-              <span className={`text-xs ${i === 0 ? 'text-white/70' : 'text-slm-gray-light'}`}>{String(i + 1).padStart(2, '0')}</span>
-              <h3 className={`font-helvetica-neue text-2xl font-medium tracking-[-0.02em] leading-tight ${i === 0 ? 'text-white' : 'text-slm-dark'}`}>{r.titulo}</h3>
-              <p className={`font-helvetica-neue text-base leading-relaxed ${i === 0 ? 'text-white/85' : 'text-slm-gray'}`}>{r.desc}</p>
-            </div>
-          ))}
+          {items.map((r, i) => {
+            const azul = i === 0 || i === 4
+            return (
+              <div
+                key={r.titulo}
+                className={`rounded-[24px] p-8 flex flex-col gap-4 ${azul ? 'bg-gradient-to-br from-slm-brand-dark via-slm-brand to-slm-brand-light text-white' : 'bg-slm-light'}`}
+              >
+                <span className={`text-xs ${azul ? 'text-white/70' : 'text-slm-gray-light'}`}>{String(i + 1).padStart(2, '0')}</span>
+                <h3 className={`font-helvetica-neue text-2xl font-medium tracking-[-0.02em] leading-tight ${azul ? 'text-white' : 'text-slm-dark'}`}>{r.titulo}</h3>
+                <p className={`font-helvetica-neue text-base leading-relaxed ${azul ? 'text-white/85' : 'text-slm-gray'}`}>{r.desc}</p>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
