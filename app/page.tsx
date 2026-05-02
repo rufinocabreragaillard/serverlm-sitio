@@ -103,7 +103,7 @@ function Header() {
     <header className="sticky top-0 left-0 right-0 flex justify-between items-center px-6 md:px-12 lg:px-15 py-6 z-20 bg-white/80 backdrop-blur-sm">
       <div className="flex items-center gap-10">
         <a href="#" className="flex items-center gap-2.5" aria-label="Server LM">
-          <Image src="/isotipo_serverlm.png" alt="" width={28} height={28} className="h-7 w-auto" />
+          <Image src="/serverlm_isotipo.png" alt="" width={28} height={28} className="h-7 w-auto" />
           <span className="font-manrope font-semibold text-2xl text-slm-dark tracking-tight">Server LM</span>
         </a>
         <nav className="hidden lg:flex items-center gap-8">
@@ -770,7 +770,7 @@ function Footer() {
       <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-10 md:gap-16 items-start justify-between">
         <div className="flex flex-col gap-4 max-w-[320px]">
           <div className="flex items-center gap-2.5 font-manrope font-semibold text-2xl text-white">
-            <Image src="/isotipo_serverlm.png" alt="" width={28} height={28} className="h-7 w-auto brightness-0 invert" style={{ filter: 'brightness(0) invert(1)' }} />
+            <Image src="/serverlm_isotipo.png" alt="" width={28} height={28} className="h-7 w-auto brightness-0 invert" style={{ filter: 'brightness(0) invert(1)' }} />
             Server LM
           </div>
           <p className="font-helvetica-neue text-sm leading-relaxed">{t('footer.tagline')}</p>
