@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Server LM — Dokumente zu deinen Diensten",
-    "description": "Sprich mit deinen Dokumenten und baue KI-Agenten darauf auf. Mandantenfähige RAG-Infrastruktur, sofort einsatzbereit, in natürlicher Sprache konfigurierbar."
+    "description": "Sprich mit deinen Dokumenten und gib deinen KI-Agenten präzisen Kontext. Mandantenfähige RAG-Infrastruktur, sofort einsatzbereit, in natürlicher Sprache konfigurierbar."
   },
   "nav": {
     "producto": "Produkt",
@@ -15,7 +15,7 @@
   "hero": {
     "eyebrow": "RAG-Infrastruktur — sofort einsatzbereit",
     "headlineLead": "Sprich mit deinen Dokumenten.",
-    "headlineAccent": "Baue Agenten darauf auf.",
+    "headlineAccent": "Gib deinen Agenten präzisen Kontext.",
     "tagline": "Dokumente zu deinen Diensten!",
     "ctaPrimario": "Registrieren & testen",
     "ctaSecundario": "So funktioniert's"
@@ -56,7 +56,7 @@
     "titulo1": "Der Chat ist",
     "tituloEm": "eine",
     "titulo2": "der Nutzungen. Nicht die einzige.",
-    "descripcion": "Dieselbe Plattform, mit der du mit deinen Dokumenten sprichst, ist die Datenebene, auf der andere ihre eigenen KI-Agenten bauen.",
+    "descripcion": "Dieselbe Plattform, mit der du mit deinen Dokumenten sprichst, ist die Ebene, die jedem KI-Agenten genau den dokumentarischen Kontext liefert, den er braucht.",
     "cardATag": "A · Produkt",
     "cardATitulo": "Sprich mit deinen Dokumenten",
     "cardADesc": "Für Fachleute, Teams und Unternehmen mit großen Dokumentenmengen. Frage in natürlicher Sprache und erhalte Antworten mit Quellenangaben, ohne Ordner zu durchsuchen oder Dateien einzeln zu öffnen.",
@@ -65,12 +65,12 @@
     "cardAB2": "Granulare Berechtigungskontrolle pro Benutzer",
     "cardACta": "15 Tage kostenlos testen",
     "cardBTag": "B · Plattform",
-    "cardBTitulo": "Baue KI-Agenten auf Server LM",
-    "cardBDesc": "Für jeden mit einer Agenten-Idee. Definiere ihn in natürlicher Sprache — ohne Code — oder verbinde ihn über MCP/CLI, wenn du möchtest. Indexierung, Vektoren und Sicherheit sind bereits gelöst.",
-    "cardBB0": "Ohne Code: konfiguriere deinen Agenten per Prompts",
-    "cardBB1": "Mit Code: MCP und CLI für fortgeschrittene Integrationen",
-    "cardBB2": "Dein Logo und deine Farben im Chat — eigenes Branding",
-    "cardBCta": "Ich will einen bauen"
+    "cardBTitulo": "Gib deinen KI-Agenten präzisen Kontext",
+    "cardBDesc": "Einem Agenten Kontext zu geben ist längst nicht mehr nur etwas für technische Profile: vom Fachmann, der seinen Agenten ohne Code baut, bis zu Beratungen und Integratoren, die für Dritte entwickeln. Server LM löst für dich das Schwierige — Ingestion, Vektoren und Sicherheit.",
+    "cardBB0": "Schlüsselfertige RAG-Engine: scannt, vektorisiert und indexiert für dich",
+    "cardBB1": "Semantische Datenbank, bereit, deinen Agenten zu speisen",
+    "cardBB2": "Mandantenfähig, sicher und per Prompts konfigurierbar",
+    "cardBCta": "Meinem Agenten Kontext geben"
   },
   "textFill": "Stelle deinen Verträgen, Berichten und Verfahren Fragen. Erhalte Antworten mit überprüfbaren Quellenangaben. Definiere die Regeln in natürlicher Sprache — ohne Programmierer, ohne dass deine Daten dein Haus verlassen.",
   "problema": {
@@ -148,7 +148,7 @@
     "agentsTag": "AGENTS",
     "agentsCapa": "Übergreifende Ebene",
     "agentsTitulo": "Die KI-Funktionen durchziehen alle Module.",
-    "agentsDesc": "Validierte APIs, Fähigkeiten und Orchestrierungen, die komplexe Aufgaben in natürlicher Sprache lösen — von der Dokumentenabfrage bis zu maßgeschneiderten Agenten, die du baust.",
+    "agentsDesc": "Validierte APIs, Fähigkeiten und Orchestrierungen, die komplexe Aufgaben in natürlicher Sprache lösen — von der Dokumentenabfrage bis zur Bereitstellung des genauen Kontexts, den deine KI-Agenten brauchen.",
     "agentsChip0": "Sichere APIs",
     "agentsChip1": "Fähigkeiten",
     "agentsChip2": "Orchestrierungen",
@@ -226,7 +226,7 @@
     "eyebrow": "Warum Server LM?",
     "titulo": "Gründe, uns zu wählen.",
     "item0Titulo": "Produkt und Plattform zugleich",
-    "item0Desc": "Nutze es, um heute mit deinen Dokumenten zu sprechen, oder als RAG-Infrastruktur, um morgen deine eigenen Agenten zu bauen — ohne Ingestion, Vektorisierung oder Sicherheit neu zu machen.",
+    "item0Desc": "Nutze es, um heute mit deinen Dokumenten zu sprechen, oder als Quelle präzisen Kontexts für deine KI-Agenten morgen — ohne Ingestion, Vektorisierung oder Sicherheit neu zu machen.",
     "item1Titulo": "Zum Wachsen gedacht",
     "item1Desc": "Vom unabhängigen Fachmann bis zum Konzern mit Dutzenden Entitäten, Hierarchieebenen und Datenschutzanforderungen. Dasselbe System begleitet das Wachstum.",
     "item2Titulo": "Keine Anbieterabhängigkeit",
@@ -235,12 +235,12 @@
     "item3Desc": "Sofort einsatzbereites SaaS. Du musst nur Dokumente hochladen und Benutzer konfigurieren — ohne eigene Infrastruktur in den Tarifen Personal, Team und Enterprise.",
     "item4Titulo": "Persönlicher Support",
     "item4Desc": "Lokales Entwicklungsteam, verfügbar, um die Plattform an deine Bedürfnisse anzupassen und Integrationen mit bestehenden Systemen zu lösen.",
-    "item5Titulo": "Jeder kann seinen Agenten bauen",
-    "item5Desc": "Es ist kein geschlossenes Programm für Partner. Jeder kann seinen Agenten auf Server LM erstellen — ihn in natürlicher Sprache ohne Code definieren oder über MCP/CLI verbinden, wenn er möchte. Mit eigenem Logo und eigenen Farben im Chat."
+    "item5Titulo": "Präziser Kontext für jeden Agenten",
+    "item5Desc": "Es ist kein geschlossenes Programm für Partner. Jeder Agent — der, den du ohne Code baust, oder der, den ein Integrator entwickelt — erhält von Server LM genau den dokumentarischen Kontext, den er braucht, mit bereits gelöster Ingestion, Vektoren und Sicherheit."
   },
   "cta": {
     "eyebrow": "Starte heute",
-    "titulo": "Interessierst du dich für Server LM für deine Arbeit, dein Team, dein Unternehmen oder als Infra für deinen Agenten?",
+    "titulo": "Interessierst du dich für Server LM für deine Arbeit, dein Team, dein Unternehmen oder als Quelle für Kontext für deine KI-Agenten?",
     "subtitulo": "Kontaktiere uns für eine kostenlose und unverbindliche Demo. 15 Tage kostenlos, ohne Zahlungsmethode.",
     "ctaPrimario": "Registrieren & testen",
     "ctaSecundario": "Mit dem Vertrieb sprechen"

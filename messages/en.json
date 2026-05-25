@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Server LM — Documents at your service",
-    "description": "Chat with your documents and build AI agents on top of them. Multi-tenant RAG infrastructure, ready to use, configurable in natural language."
+    "description": "Chat with your documents and give precise context to your AI agents. Multi-tenant RAG infrastructure, ready to use, configurable in natural language."
   },
   "nav": {
     "producto": "Product",
@@ -15,7 +15,7 @@
   "hero": {
     "eyebrow": "RAG infrastructure — ready to use",
     "headlineLead": "Chat with your documents.",
-    "headlineAccent": "Build agents on top of them.",
+    "headlineAccent": "Give precise context to your agents.",
     "tagline": "Documents at your service!",
     "ctaPrimario": "Sign up & try",
     "ctaSecundario": "See how it works"
@@ -56,7 +56,7 @@
     "titulo1": "Chat is",
     "tituloEm": "one",
     "titulo2": "of the uses. Not the only one.",
-    "descripcion": "The same platform that lets you chat with your documents is the data layer on which others build their own AI agents.",
+    "descripcion": "The same platform that lets you chat with your documents is the layer that delivers any AI agent the exact document context it needs.",
     "cardATag": "A · Product",
     "cardATitulo": "Chat with your documents",
     "cardADesc": "For professionals, teams and companies with large document volumes. Ask in natural language and get answers with citations, without browsing folders or opening files one by one.",
@@ -65,12 +65,12 @@
     "cardAB2": "Granular permission control per user",
     "cardACta": "Try it free for 15 days",
     "cardBTag": "B · Platform",
-    "cardBTitulo": "Build AI agents on top of Server LM",
-    "cardBDesc": "For anyone with an agent idea. Define it in natural language — no code — or connect it via MCP/CLI if you prefer. Indexing, vectors and security are already solved.",
-    "cardBB0": "No code: configure your agent with prompts",
-    "cardBB1": "With code: MCP and CLI for advanced integrations",
-    "cardBB2": "Your logo and colors in the chat — your own branding",
-    "cardBCta": "I want to build one"
+    "cardBTitulo": "Give precise context to your AI agents",
+    "cardBDesc": "Giving an agent context is no longer just for technical profiles: from a professional building their own agent without code to consultancies and integrators building for third parties. Server LM hands you the hard part solved — ingestion, vectors and security.",
+    "cardBB0": "Turnkey RAG engine: scans, vectorizes and indexes for you",
+    "cardBB1": "Semantic database ready to feed your agent",
+    "cardBB2": "Multi-tenant, secure and configurable by prompts",
+    "cardBCta": "Give my agent context"
   },
   "textFill": "Ask questions of your contracts, reports and procedures. Get answers with verifiable citations. Define the rules in natural language — no programmers, without your data leaving.",
   "problema": {
@@ -148,7 +148,7 @@
     "agentsTag": "AGENTS",
     "agentsCapa": "Cross-cutting layer",
     "agentsTitulo": "AI capabilities cut across every module.",
-    "agentsDesc": "Validated APIs, skills and orchestrations that solve complex tasks in natural language — from document querying to custom agents you build.",
+    "agentsDesc": "Validated APIs, skills and orchestrations that solve complex tasks in natural language — from document querying to delivering the exact context your AI agents need.",
     "agentsChip0": "Secure APIs",
     "agentsChip1": "Skills",
     "agentsChip2": "Orchestrations",
@@ -226,7 +226,7 @@
     "eyebrow": "Why Server LM?",
     "titulo": "Reasons to choose us.",
     "item0Titulo": "Product and platform at once",
-    "item0Desc": "Use it to chat with your documents today, or as RAG infrastructure to build your own agents tomorrow — without redoing ingestion, vectorization or security.",
+    "item0Desc": "Use it to chat with your documents today, or as a source of precise context for your AI agents tomorrow — without redoing ingestion, vectorization or security.",
     "item1Titulo": "Built to grow",
     "item1Desc": "From an independent professional to a corporation with dozens of entities, hierarchical levels and privacy requirements. The same system grows with you.",
     "item2Titulo": "No vendor lock-in",
@@ -235,12 +235,12 @@
     "item3Desc": "Ready-to-use SaaS. You only need to upload documents and configure users — no own infrastructure on Personal, Team and Enterprise plans.",
     "item4Titulo": "Close support",
     "item4Desc": "Local development team available to adapt the platform to your needs and resolve integrations with existing systems.",
-    "item5Titulo": "Anyone can build their agent",
-    "item5Desc": "It's not a closed program for partners. Anyone can create their agent on top of Server LM — define it in natural language without code, or connect via MCP/CLI if preferred. With your own logo and colors in the chat."
+    "item5Titulo": "Precise context for any agent",
+    "item5Desc": "It's not a closed program for partners. Any agent — the one you build without code or the one an integrator builds — gets from Server LM the exact document context it needs, with ingestion, vectors and security already solved."
   },
   "cta": {
     "eyebrow": "Start today",
-    "titulo": "Interested in Server LM for your work, team, company or as infra for your agent?",
+    "titulo": "Interested in Server LM for your work, team, company or as a source of context for your AI agents?",
     "subtitulo": "Contact us for a free, no-commitment demo. 15 days free, no payment method required.",
     "ctaPrimario": "Sign up & try",
     "ctaSecundario": "Talk to sales"

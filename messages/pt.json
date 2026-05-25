@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Server LM — Documentos a seu serviço",
-    "description": "Converse com seus documentos e construa agentes de IA sobre eles. Infraestrutura RAG multi-tenant, pronta para usar, configurável em linguagem natural."
+    "description": "Converse com seus documentos e dê contexto preciso aos seus agentes de IA. Infraestrutura RAG multi-tenant, pronta para usar, configurável em linguagem natural."
   },
   "nav": {
     "producto": "Produto",
@@ -15,7 +15,7 @@
   "hero": {
     "eyebrow": "Infraestrutura RAG — pronta para usar",
     "headlineLead": "Converse com seus documentos.",
-    "headlineAccent": "Construa agentes sobre eles.",
+    "headlineAccent": "Dê contexto preciso aos seus agentes.",
     "tagline": "Documentos a seu serviço!",
     "ctaPrimario": "Cadastre-se e teste",
     "ctaSecundario": "Veja como funciona"
@@ -56,7 +56,7 @@
     "titulo1": "O chat é",
     "tituloEm": "um",
     "titulo2": "dos usos. Não o único.",
-    "descripcion": "A mesma plataforma que permite conversar com seus documentos é a camada de dados sobre a qual outros constroem seus próprios agentes de IA.",
+    "descripcion": "A mesma plataforma que permite conversar com seus documentos é a camada que entrega a qualquer agente de IA o contexto documental exato que ele precisa.",
     "cardATag": "A · Produto",
     "cardATitulo": "Converse com seus documentos",
     "cardADesc": "Para profissionais, equipes e empresas com grandes volumes de documentos. Pergunte em linguagem natural e obtenha respostas com citações, sem navegar por pastas nem abrir arquivos um a um.",
@@ -65,12 +65,12 @@
     "cardAB2": "Controle granular de permissões por usuário",
     "cardACta": "Experimente grátis por 15 dias",
     "cardBTag": "B · Plataforma",
-    "cardBTitulo": "Construa agentes de IA sobre o Server LM",
-    "cardBDesc": "Para qualquer um que tenha uma ideia de agente. Defina-o em linguagem natural — sem código — ou conecte-o via MCP/CLI se preferir. A indexação, os vetores e a segurança já estão resolvidos.",
-    "cardBB0": "Sem código: configure seu agente por prompts",
-    "cardBB1": "Com código: MCP e CLI para integrações avançadas",
-    "cardBB2": "Seu logo e cores no chat — identidade própria",
-    "cardBCta": "Quero construir um"
+    "cardBTitulo": "Dê contexto preciso aos seus agentes de IA",
+    "cardBDesc": "Dar contexto a um agente já não é só para perfis técnicos: de um profissional que monta seu agente sem código a consultorias e integradores que constroem para terceiros. O Server LM entrega o difícil resolvido — ingestão, vetores e segurança.",
+    "cardBB0": "Motor RAG chave na mão: escaneia, vetoriza e indexa por você",
+    "cardBB1": "Base de dados semântica pronta para alimentar seu agente",
+    "cardBB2": "Multi-tenant, seguro e configurável por prompts",
+    "cardBCta": "Dar contexto ao meu agente"
   },
   "textFill": "Faça perguntas aos seus contratos, relatórios e procedimentos. Obtenha respostas com citações verificáveis. Defina as regras em linguagem natural — sem programadores, sem que seus dados saiam.",
   "problema": {
@@ -148,7 +148,7 @@
     "agentsTag": "AGENTS",
     "agentsCapa": "Camada transversal",
     "agentsTitulo": "As capacidades de IA atravessam todos os módulos.",
-    "agentsDesc": "APIs validadas, habilidades e orquestrações que resolvem tarefas complexas em linguagem natural — da consulta documental a agentes sob medida que você construir.",
+    "agentsDesc": "APIs validadas, habilidades e orquestrações que resolvem tarefas complexas em linguagem natural — da consulta documental a entregar o contexto exato que seus agentes de IA precisam.",
     "agentsChip0": "APIs seguras",
     "agentsChip1": "Habilidades",
     "agentsChip2": "Orquestrações",
@@ -226,7 +226,7 @@
     "eyebrow": "Por que o Server LM?",
     "titulo": "Razões para nos escolher.",
     "item0Titulo": "Produto e plataforma ao mesmo tempo",
-    "item0Desc": "Use-o para conversar com seus documentos hoje, ou como infraestrutura RAG para construir seus próprios agentes amanhã — sem refazer a ingestão, a vetorização nem a segurança.",
+    "item0Desc": "Use-o para conversar com seus documentos hoje, ou como fonte de contexto preciso para seus agentes de IA amanhã — sem refazer a ingestão, a vetorização nem a segurança.",
     "item1Titulo": "Pensado para crescer",
     "item1Desc": "De um profissional independente a uma corporação com dezenas de entidades, níveis hierárquicos e requisitos de privacidade. O mesmo sistema acompanha o crescimento.",
     "item2Titulo": "Sem dependência de fornecedor",
@@ -235,12 +235,12 @@
     "item3Desc": "SaaS pronto para usar. Você só precisa enviar documentos e configurar usuários — sem infraestrutura própria nos planos Personal, Team e Enterprise.",
     "item4Titulo": "Suporte próximo",
     "item4Desc": "Equipe de desenvolvimento local com disponibilidade para adaptar a plataforma às suas necessidades e resolver integrações com sistemas existentes.",
-    "item5Titulo": "Qualquer um pode construir seu agente",
-    "item5Desc": "Não é um programa fechado para parceiros. Qualquer um pode criar seu agente sobre o Server LM — defini-lo em linguagem natural sem código, ou conectar-se via MCP/CLI se preferir. Com logo e cores próprios no chat."
+    "item5Titulo": "Contexto preciso para qualquer agente",
+    "item5Desc": "Não é um programa fechado para parceiros. Qualquer agente — o que você monta sem código ou o que um integrador constrói — recebe do Server LM o contexto documental exato que precisa, com ingestão, vetores e segurança já resolvidos."
   },
   "cta": {
     "eyebrow": "Comece hoje",
-    "titulo": "Interessado no Server LM para seu trabalho, equipe, empresa ou como infra para seu agente?",
+    "titulo": "Interessado no Server LM para seu trabalho, equipe, empresa ou como fonte de contexto para seus agentes de IA?",
     "subtitulo": "Entre em contato para uma demonstração sem custo nem compromisso. 15 dias grátis, sem método de pagamento.",
     "ctaPrimario": "Cadastre-se e teste",
     "ctaSecundario": "Falar com vendas"

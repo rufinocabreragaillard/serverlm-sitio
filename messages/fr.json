@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Server LM — Vos documents à votre service",
-    "description": "Discutez avec vos documents et construisez des agents IA par-dessus. Infrastructure RAG multi-tenant, prête à l'emploi, configurable en langage naturel."
+    "description": "Discutez avec vos documents et donnez un contexte précis à vos agents IA. Infrastructure RAG multi-tenant, prête à l'emploi, configurable en langage naturel."
   },
   "nav": {
     "producto": "Produit",
@@ -15,7 +15,7 @@
   "hero": {
     "eyebrow": "Infrastructure RAG — prête à l'emploi",
     "headlineLead": "Discute avec tes documents.",
-    "headlineAccent": "Construis des agents par-dessus.",
+    "headlineAccent": "Donne un contexte précis à tes agents.",
     "tagline": "Tes documents à ton service !",
     "ctaPrimario": "Inscris-toi et essaie",
     "ctaSecundario": "Voir comment ça marche"
@@ -56,7 +56,7 @@
     "titulo1": "Le chat est",
     "tituloEm": "un",
     "titulo2": "des usages. Pas le seul.",
-    "descripcion": "La même plateforme qui te permet de discuter avec tes documents est la couche de données sur laquelle d'autres construisent leurs propres agents IA.",
+    "descripcion": "La même plateforme qui te permet de discuter avec tes documents est la couche qui fournit à n'importe quel agent IA le contexte documentaire exact dont il a besoin.",
     "cardATag": "A · Produit",
     "cardATitulo": "Discute avec tes documents",
     "cardADesc": "Pour les professionnels, équipes et entreprises avec de grands volumes documentaires. Pose tes questions en langage naturel et obtiens des réponses avec citations, sans naviguer dans les dossiers ni ouvrir les fichiers un par un.",
@@ -65,12 +65,12 @@
     "cardAB2": "Contrôle granulaire des permissions par utilisateur",
     "cardACta": "Essaie gratuitement 15 jours",
     "cardBTag": "B · Plateforme",
-    "cardBTitulo": "Construis des agents IA sur Server LM",
-    "cardBDesc": "Pour quiconque a une idée d'agent. Définis-le en langage naturel — sans code — ou connecte-le via MCP/CLI si tu préfères. L'indexation, les vecteurs et la sécurité sont déjà résolus.",
-    "cardBB0": "Sans code : configure ton agent par prompts",
-    "cardBB1": "Avec code : MCP et CLI pour les intégrations avancées",
-    "cardBB2": "Ton logo et tes couleurs dans le chat — ta propre identité",
-    "cardBCta": "Je veux en construire un"
+    "cardBTitulo": "Donne un contexte précis à tes agents IA",
+    "cardBDesc": "Donner du contexte à un agent n'est plus réservé aux profils techniques : du professionnel qui monte son agent sans code aux cabinets de conseil et intégrateurs qui construisent pour des tiers. Server LM te livre le difficile déjà résolu — ingestion, vecteurs et sécurité.",
+    "cardBB0": "Moteur RAG clé en main : scanne, vectorise et indexe pour toi",
+    "cardBB1": "Base de données sémantique prête à alimenter ton agent",
+    "cardBB2": "Multi-tenant, sécurisé et configurable par prompts",
+    "cardBCta": "Donner du contexte à mon agent"
   },
   "textFill": "Pose des questions à tes contrats, rapports et procédures. Obtiens des réponses avec des citations vérifiables. Définis les règles en langage naturel — sans programmeurs, sans que tes données sortent.",
   "problema": {
@@ -148,7 +148,7 @@
     "agentsTag": "AGENTS",
     "agentsCapa": "Couche transversale",
     "agentsTitulo": "Les capacités d'IA traversent tous les modules.",
-    "agentsDesc": "API validées, compétences et orchestrations qui résolvent des tâches complexes en langage naturel — de la consultation documentaire aux agents sur mesure que tu construis.",
+    "agentsDesc": "API validées, compétences et orchestrations qui résolvent des tâches complexes en langage naturel — de la consultation documentaire à la fourniture du contexte exact dont tes agents IA ont besoin.",
     "agentsChip0": "API sécurisées",
     "agentsChip1": "Compétences",
     "agentsChip2": "Orchestrations",
@@ -226,7 +226,7 @@
     "eyebrow": "Pourquoi Server LM ?",
     "titulo": "Des raisons de nous choisir.",
     "item0Titulo": "Produit et plateforme à la fois",
-    "item0Desc": "Utilise-le pour discuter avec tes documents aujourd'hui, ou comme infrastructure RAG pour construire tes propres agents demain — sans refaire l'ingestion, la vectorisation ni la sécurité.",
+    "item0Desc": "Utilise-le pour discuter avec tes documents aujourd'hui, ou comme source de contexte précis pour tes agents IA demain — sans refaire l'ingestion, la vectorisation ni la sécurité.",
     "item1Titulo": "Pensé pour grandir",
     "item1Desc": "D'un professionnel indépendant à une corporation avec des dizaines d'entités, niveaux hiérarchiques et exigences de confidentialité. Le même système accompagne la croissance.",
     "item2Titulo": "Sans dépendance à un fournisseur",
@@ -235,12 +235,12 @@
     "item3Desc": "SaaS prêt à l'emploi. Tu n'as qu'à téléverser des documents et configurer les utilisateurs — sans infrastructure propre sur les plans Personal, Team et Enterprise.",
     "item4Titulo": "Support de proximité",
     "item4Desc": "Équipe de développement locale disponible pour adapter la plateforme à tes besoins et résoudre les intégrations avec les systèmes existants.",
-    "item5Titulo": "N'importe qui peut construire son agent",
-    "item5Desc": "Ce n'est pas un programme fermé réservé aux partenaires. N'importe qui peut créer son agent sur Server LM — le définir en langage naturel sans code, ou se connecter via MCP/CLI s'il préfère. Avec son propre logo et ses couleurs dans le chat."
+    "item5Titulo": "Un contexte précis pour n'importe quel agent",
+    "item5Desc": "Ce n'est pas un programme fermé réservé aux partenaires. N'importe quel agent — celui que tu construis sans code ou celui qu'un intégrateur développe — reçoit de Server LM le contexte documentaire exact dont il a besoin, avec ingestion, vecteurs et sécurité déjà résolus."
   },
   "cta": {
     "eyebrow": "Commence aujourd'hui",
-    "titulo": "Server LM t'intéresse pour ton travail, ton équipe, ton entreprise ou comme infra pour ton agent ?",
+    "titulo": "Server LM t'intéresse pour ton travail, ton équipe, ton entreprise ou comme source de contexte pour tes agents IA ?",
     "subtitulo": "Contacte-nous pour une démonstration sans frais ni engagement. 15 jours gratuits, sans moyen de paiement.",
     "ctaPrimario": "Inscris-toi et essaie",
     "ctaSecundario": "Parler aux ventes"
